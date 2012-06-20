@@ -13,6 +13,8 @@ gem 'jbuilder'
 ## Services
 gem 'omniauth'
 gem 'omniauth-twitter'
+gem 'omniauth-openid'
+gem 'omniauth-google-oauth2'
 gem 'twitter'
 
 group :assets do

@@ -1,0 +1,31 @@
+{
+   "provider":"google",
+   "uid":"104955497800422280552",
+   "info":{
+      "name":"Mike Silvis",
+      "email":"mikesilvis@gmail.com",
+      "first_name":"Mike",
+      "last_name":"Silvis",
+      "image":"https://lh5.googleusercontent.com/-NcRyC2g2SmA/AAAAAAAAAAI/AAAAAAAAAAA/8oRV3fRkRI0/photo.jpg"
+   },
+   "credentials":{
+      "token":"ya29.AHES6ZT9yqjvk1tUHn-n6j7KuPed1bURetPXap0cPH7yyAV8W2J_YQ",
+      "refresh_token":"1/AnKESgEiGgb-RNnEA_YhOu9svFQUaldVhgf5ojtQQb4",
+      "expires_at":1340165475,
+      "expires":true
+   },
+   "extra":{
+      "raw_info":{
+         "id":"104955497800422280552",
+         "email":"mikesilvis@gmail.com",
+         "verified_email":true,
+         "name":"Mike Silvis",
+         "given_name":"Mike",
+         "family_name":"Silvis",
+         "link":"https://plus.google.com/104955497800422280552",
+         "picture":"https://lh5.googleusercontent.com/-NcRyC2g2SmA/AAAAAAAAAAI/AAAAAAAAAAA/8oRV3fRkRI0/photo.jpg",
+         "gender":"male",
+         "locale":"en"
+      }
+   }
+}
