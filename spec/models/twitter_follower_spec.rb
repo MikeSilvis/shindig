@@ -1,9 +1,10 @@
 require 'spec_helper'
+
 describe TwitterFollower do
   include TwitterSupport
-  let(:ids) {  TwitterSupport::get_ids() }
-  let(:followers) { TwitterSupport::get_followers() }
+  let(:ids) { [612476110, 222916327, 471352822] }
   let(:user) { User.new }
+
   context "can save followers" do
     before(:each) do
       user.stub(:twitter_ids).and_return(ids)
