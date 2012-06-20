@@ -5,6 +5,12 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :remember_me, :name, :username
 
   def self.create_twitter(data)
-    User.create(name: data[:name], username: data[:nickname])
+    User.create(name: data["name"], username: data["nickname"])
+  end
+
+  SERVICES.each do |service|
+    define_method "#{service}".to_sym do
+      authentications.twitter
+    end
   end
 end

@@ -1,0 +1,266 @@
+{
+   "provider":"twitter",
+   "uid":"314378901",
+   "info":{
+      "nickname":"MikeSilvis",
+      "name":"Mike Silvis",
+      "location":"Washington, D.C.",
+      "image":"http://a0.twimg.com/profile_images/2295611737/1bwber02sx2vn35452ri_normal.png",
+      "description":"Passionate rails developer, snowboarder, motocross rider; \r\nStudent in the @hungryacademy @livingsocial",
+      "urls":{
+         "Website":"http://mikesilvis.com",
+         "Twitter":"http://twitter.com/MikeSilvis"
+      }
+   },
+   "credentials":{
+      "token":"314378901-qUB9nOV0ejMk2kiw5ohUzadv2sE6zChISxjxAxKZ",
+      "secret":"pZIHwDPidVF09TJcPkQaaIfVPUppj3JYyUr8dQFTsM"
+   },
+   "extra":{
+      "access_token":{
+         "token":"314378901-qUB9nOV0ejMk2kiw5ohUzadv2sE6zChISxjxAxKZ",
+         "secret":"pZIHwDPidVF09TJcPkQaaIfVPUppj3JYyUr8dQFTsM",
+         "consumer":{
+            "key":"2yBLkeHyddvYDCkLNvZXQ",
+            "secret":"sbevPXWzNwyrrKOob4poYGlPFGocNYHk7U75QjFcm4",
+            "options":{
+               "signature_method":"HMAC-SHA1",
+               "request_token_path":"/oauth/request_token",
+               "authorize_path":"/oauth/authenticate",
+               "access_token_path":"/oauth/access_token",
+               "proxy":null,
+               "scheme":"header",
+               "http_method":"post",
+               "oauth_version":"1.0",
+               "site":"https://api.twitter.com"
+            },
+            "http":{
+               "address":"api.twitter.com",
+               "port":443,
+               "curr_http_version":"1.1",
+               "no_keepalive_server":false,
+               "close_on_empty_response":false,
+               "socket":null,
+               "started":false,
+               "open_timeout":30,
+               "read_timeout":30,
+               "continue_timeout":null,
+               "debug_output":null,
+               "use_ssl":true,
+               "ssl_context":{
+                  "cert":null,
+                  "key":null,
+                  "client_ca":null,
+                  "ca_file":null,
+                  "ca_path":null,
+                  "timeout":null,
+                  "verify_mode":0,
+                  "verify_depth":null,
+                  "verify_callback":null,
+                  "options":4095,
+                  "cert_store":null,
+                  "extra_chain_cert":null,
+                  "client_cert_cb":null,
+                  "tmp_dh_callback":null,
+                  "session_id_context":null,
+                  "session_get_cb":null,
+                  "session_new_cb":null,
+                  "session_remove_cb":null,
+                  "servername_cb":null
+               },
+               "enable_post_connection_check":true,
+               "compression":null,
+               "sspi_enabled":false,
+               "ssl_version":null,
+               "key":null,
+               "cert":null,
+               "ca_file":null,
+               "ca_path":null,
+               "cert_store":null,
+               "ciphers":null,
+               "verify_mode":0,
+               "verify_callback":null,
+               "verify_depth":null,
+               "ssl_timeout":null
+            },
+            "http_method":"post",
+            "uri":{
+               "scheme":"https",
+               "user":null,
+               "password":null,
+               "host":"api.twitter.com",
+               "port":443,
+               "path":"",
+               "query":null,
+               "opaque":null,
+               "registry":null,
+               "fragment":null,
+               "parser":null
+            }
+         },
+         "params":{
+            "oauth_token":"314378901-qUB9nOV0ejMk2kiw5ohUzadv2sE6zChISxjxAxKZ",
+            "oauth_token_secret":"pZIHwDPidVF09TJcPkQaaIfVPUppj3JYyUr8dQFTsM",
+            "user_id":"314378901",
+            "screen_name":"MikeSilvis"
+         },
+         "response":{
+            "date":[
+               "Wed, 20 Jun 2012 01:31:37 GMT"
+            ],
+            "status":[
+               "200 OK"
+            ],
+            "x-ratelimit-reset":[
+               "1340158095"
+            ],
+            "content-type":[
+               "application/json; charset=utf-8"
+            ],
+            "x-frame-options":[
+               "SAMEORIGIN"
+            ],
+            "x-ratelimit-class":[
+               "api_identified"
+            ],
+            "x-transaction-mask":[
+               "a6183ffa5f8ca943ff1b53b5644ef11483c6f867"
+            ],
+            "x-access-level":[
+               "read"
+            ],
+            "last-modified":[
+               "Wed, 20 Jun 2012 01:31:37 GMT"
+            ],
+            "x-ratelimit-limit":[
+               "350"
+            ],
+            "x-ratelimit-remaining":[
+               "334"
+            ],
+            "x-transaction":[
+               "e1f6a7c164435241"
+            ],
+            "cache-control":[
+               "no-cache, no-store, must-revalidate, pre-check=0, post-check=0"
+            ],
+            "content-length":[
+               "2798"
+            ],
+            "etag":[
+               "\"d6c806ac44a0a6ac82d7b5c411327ab6\""
+            ],
+            "x-mid":[
+               "e3270b517acab4091763c18e9c73bc599f96e8e8"
+            ],
+            "expires":[
+               "Tue, 31 Mar 1981 05:00:00 GMT"
+            ],
+            "x-runtime":[
+               "0.04047"
+            ],
+            "pragma":[
+               "no-cache"
+            ],
+            "set-cookie":[
+               "k=10.34.251.138.1340155897044170; path=/; expires=Wed, 27-Jun-12 01:31:37 GMT; domain=.twitter.com",
+               "guest_id=v1%3A134015589704738101; domain=.twitter.com; path=/; expires=Fri, 20-Jun-2014 13:31:37 GMT",
+               "dnt=; domain=.twitter.com; path=/; expires=Thu, 01-Jan-1970 00:00:00 GMT",
+               "lang=en; path=/",
+               "twid=u%3D314378901%7CYQdDhtDoE%2FUhpZ6%2FGhHACp%2BSdso%3D; domain=.twitter.com; path=/; secure",
+               "_twitter_sess=BAh7CSIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%250ASGFzaHsABjoKQHVzZWR7ADoPY3JlYXRlZF9hdGwrCOUkhAc4AToMY3NyZl9p%250AZCIlMmIzYzhkNzE5YjViN2UxNGVhMmViODZkMzNiNDk3ZDA6B2lkIiUwNGU3%250AYmE3MDYxZjA2NGQ3ODI0MmY4ZTczY2Q0ZTZmMg%253D%253D--ab5cab80e995b3a10adacc4c7d77489e79442aa6; domain=.twitter.com; path=/; HttpOnly"
+            ],
+            "vary":[
+               "Accept-Encoding"
+            ],
+            "server":[
+               "tfe"
+            ]
+         }
+      },
+      "raw_info":{
+         "id":314378901,
+         "screen_name":"MikeSilvis",
+         "profile_background_image_url_https":"https://si0.twimg.com/images/themes/theme4/bg.gif",
+         "show_all_inline_media":false,
+         "profile_sidebar_border_color":"5ED4DC",
+         "profile_image_url_https":"https://si0.twimg.com/profile_images/2295611737/1bwber02sx2vn35452ri_normal.png",
+         "following":false,
+         "time_zone":null,
+         "utc_offset":null,
+         "profile_background_tile":false,
+         "notifications":false,
+         "default_profile":false,
+         "profile_sidebar_fill_color":"95E8EC",
+         "name":"Mike Silvis",
+         "url":"http://mikesilvis.com",
+         "protected":false,
+         "created_at":"Fri Jun 10 04:50:04 +0000 2011",
+         "statuses_count":212,
+         "listed_count":5,
+         "profile_background_color":"0099B9",
+         "follow_request_sent":false,
+         "friends_count":125,
+         "description":"Passionate rails developer, snowboarder, motocross rider; \r\nStudent in the @hungryacademy @livingsocial",
+         "profile_background_image_url":"http://a0.twimg.com/images/themes/theme4/bg.gif",
+         "is_translator":false,
+         "profile_link_color":"0099B9",
+         "location":"Washington, D.C.",
+         "lang":"en",
+         "default_profile_image":false,
+         "profile_use_background_image":true,
+         "profile_image_url":"http://a0.twimg.com/profile_images/2295611737/1bwber02sx2vn35452ri_normal.png",
+         "contributors_enabled":false,
+         "status":{
+            "possibly_sensitive_editable":true,
+            "retweeted_status":{
+               "possibly_sensitive_editable":true,
+               "retweet_count":24,
+               "in_reply_to_user_id":null,
+               "possibly_sensitive":false,
+               "retweeted":true,
+               "in_reply_to_status_id_str":null,
+               "in_reply_to_status_id":null,
+               "in_reply_to_user_id_str":null,
+               "truncated":false,
+               "created_at":"Tue Jun 19 19:20:01 +0000 2012",
+               "coordinates":null,
+               "geo":null,
+               "favorited":false,
+               "id_str":"215162036869533696",
+               "contributors":null,
+               "source":"<a href=\"http://www.tweetdeck.com\" rel=\"nofollow\">TweetDeck</a>",
+               "place":null,
+               "in_reply_to_screen_name":null,
+               "id":215162036869533696,
+               "text":"Order food online and we'll spot you $10 for your 1st Takeout &amp; Delivery order! Try it, maybe? http://t.co/LG89jjPo"
+            },
+            "retweet_count":24,
+            "in_reply_to_user_id":null,
+            "possibly_sensitive":false,
+            "retweeted":true,
+            "in_reply_to_status_id_str":null,
+            "in_reply_to_status_id":null,
+            "in_reply_to_user_id_str":null,
+            "truncated":false,
+            "created_at":"Tue Jun 19 20:26:15 +0000 2012",
+            "coordinates":null,
+            "geo":null,
+            "favorited":false,
+            "id_str":"215178703867625472",
+            "contributors":null,
+            "source":"<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+            "place":null,
+            "in_reply_to_screen_name":null,
+            "id":215178703867625472,
+            "text":"RT @LivingSocial: Order food online and we'll spot you $10 for your 1st Takeout &amp; Delivery order! Try it, maybe? http://t.co/LG89jjPo"
+         },
+         "profile_text_color":"3C3940",
+         "favourites_count":2,
+         "followers_count":108,
+         "geo_enabled":false,
+         "id_str":"314378901",
+         "verified":false
+      }
+   }
+}
