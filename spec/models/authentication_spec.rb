@@ -35,4 +35,13 @@ describe Authentication do
     end
   end
 
+  describe "From User find auths" do
+    it "Can find Twitter" do
+      twitter3.user.twitter.id.should == twitter3.id
+    end
+    it "Can find Google" do
+      google3.user.google.id.should == google3.id
+    end
+  end
+
 end

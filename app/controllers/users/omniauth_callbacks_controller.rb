@@ -10,7 +10,9 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 private
 
   def create_user_and_auth(service)
+    event_token = session[:event_token] if session[:event_token]
     sign_in(User.send("verify_#{service}".to_sym, data).user)
+    current_user.attendees.add_event(event_token) if session[:event_token]
   end
 
   def create_auth(service)
