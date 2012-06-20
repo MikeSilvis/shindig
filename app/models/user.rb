@@ -28,7 +28,7 @@ class User < ActiveRecord::Base
   SERVICES.each do |service|
     define_singleton_method "verify_#{service}".to_sym do |data|
       user = User.verify_from_service(service, data["info"])
-      user.authentications.send("lookup_#{service}".to_sym, data)
+      user.authentications.send("find_or_create_#{service}".to_sym, data)
     end
 
     define_method "#{service}".to_sym do

@@ -7,6 +7,8 @@ html
     = csrf_meta_tags
   body
     p.user= current_user.username
+    p.user= "Twitter: #{current_user.twitter.username}"
+    p.user= "Google: #{current_user.google.username}"
     p.notice= notice
     p.alert= alert
     = yield

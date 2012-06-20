@@ -8,7 +8,7 @@ class Authentication < ActiveRecord::Base
     end
   end
 
-  def self.lookup_twitter(data)
+  def self.find_or_create_twitter(data)
     where(token: data["credentials"]["token"],
                                provider: data["provider"]
                               ).first_or_create(
@@ -19,7 +19,7 @@ class Authentication < ActiveRecord::Base
                                           )
   end
 
-  def self.lookup_google(data)
+  def self.find_or_create_google(data)
     where(token: data["credentials"]["token"],
           provider: data["provider"]
          ).first_or_create(
