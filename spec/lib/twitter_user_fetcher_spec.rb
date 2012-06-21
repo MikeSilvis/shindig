@@ -29,10 +29,15 @@ describe TwitterUserFetcher do
       let(:fetcher) { TwitterUserFetcher.new(api, [123, 456])}
       let(:api)     { TwitterApi.new('token', 'secret') }
 
-      it "gets tweeps for each non-blacklisted id" do
+      it "does not get tweeps" do
         api.should_receive(:tweep_ids).once.and_return([123, 456])
         api.should_receive(:get_users).never
         fetcher.fetch
+      end
+
+      it "returns an empty collection" do
+        api.stub(:tweep_ids => [123, 456])
+        fetcher.fetch.should be_empty
       end
     end
   end

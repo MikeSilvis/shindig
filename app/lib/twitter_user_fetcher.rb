@@ -10,7 +10,9 @@ class TwitterUserFetcher
     potential_import_ids  = twitter_api.tweep_ids
     potential_import_ids -= blacklist_ids
 
-    twitter_api.get_users(potential_import_ids) unless potential_import_ids.empty?
+    return [] if potential_import_ids.empty?
+
+    twitter_api.get_users(potential_import_ids)
   end
 
 end
