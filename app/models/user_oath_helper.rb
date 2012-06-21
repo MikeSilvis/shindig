@@ -37,6 +37,14 @@ module  UserOathHelper
     define_method "#{service}".to_sym do
       authentications.send("#{service}".to_sym)
     end
+
+    define_method "#{service}_token".to_sym do
+      authentications.send("#{service}".to_sym).token
+    end
+
+    define_method "#{service}_secret".to_sym do
+      authentications.send("#{service}".to_sym).secret
+    end
   end
 
 end

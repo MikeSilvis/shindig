@@ -1,14 +1,14 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/mikesilvis/Documents/Hungry-Academy/projects/shindig/config/environment.rb": [
+      "/Users/matt/code/mikesilvis/shindig/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/Users/mikesilvis/Documents/Hungry-Academy/projects/shindig/config/application.rb": [
+      "/Users/matt/code/mikesilvis/shindig/config/application.rb": [
         1,
         null,
         1,
@@ -70,7 +70,7 @@
         null,
         null
       ],
-      "/Users/mikesilvis/Documents/Hungry-Academy/projects/shindig/config/boot.rb": [
+      "/Users/matt/code/mikesilvis/shindig/config/boot.rb": [
         1,
         null,
         null,
@@ -78,7 +78,7 @@
         null,
         1
       ],
-      "/Users/mikesilvis/Documents/Hungry-Academy/projects/shindig/config/environments/test.rb": [
+      "/Users/matt/code/mikesilvis/shindig/config/environments/test.rb": [
         1,
         null,
         null,
@@ -117,7 +117,7 @@
         1,
         null
       ],
-      "/Users/mikesilvis/Documents/Hungry-Academy/projects/shindig/config/initializers/backtrace_silencers.rb": [
+      "/Users/matt/code/mikesilvis/shindig/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -126,7 +126,7 @@
         null,
         null
       ],
-      "/Users/mikesilvis/Documents/Hungry-Academy/projects/shindig/config/initializers/devise.rb": [
+      "/Users/matt/code/mikesilvis/shindig/config/initializers/devise.rb": [
         1,
         null,
         null,
@@ -364,7 +364,7 @@
         null,
         null
       ],
-      "/Users/mikesilvis/Documents/Hungry-Academy/projects/shindig/config/initializers/oath_keys.rb": [
+      "/Users/matt/code/mikesilvis/shindig/config/initializers/oath_keys.rb": [
         1,
         0,
         0,
@@ -373,7 +373,7 @@
         0,
         null
       ],
-      "/Users/mikesilvis/Documents/Hungry-Academy/projects/shindig/config/initializers/inflections.rb": [
+      "/Users/matt/code/mikesilvis/shindig/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -390,14 +390,14 @@
         null,
         null
       ],
-      "/Users/mikesilvis/Documents/Hungry-Academy/projects/shindig/config/initializers/mime_types.rb": [
+      "/Users/matt/code/mikesilvis/shindig/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null,
         null
       ],
-      "/Users/mikesilvis/Documents/Hungry-Academy/projects/shindig/config/initializers/secret_token.rb": [
+      "/Users/matt/code/mikesilvis/shindig/config/initializers/secret_token.rb": [
         null,
         null,
         null,
@@ -406,10 +406,10 @@
         null,
         1
       ],
-      "/Users/mikesilvis/Documents/Hungry-Academy/projects/shindig/config/initializers/services.rb": [
+      "/Users/matt/code/mikesilvis/shindig/config/initializers/services.rb": [
         1
       ],
-      "/Users/mikesilvis/Documents/Hungry-Academy/projects/shindig/config/initializers/session_store.rb": [
+      "/Users/matt/code/mikesilvis/shindig/config/initializers/session_store.rb": [
         null,
         null,
         1,
@@ -419,7 +419,7 @@
         null,
         null
       ],
-      "/Users/mikesilvis/Documents/Hungry-Academy/projects/shindig/config/initializers/wrap_parameters.rb": [
+      "/Users/matt/code/mikesilvis/shindig/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -435,7 +435,7 @@
         1,
         null
       ],
-      "/Users/mikesilvis/Documents/Hungry-Academy/projects/shindig/config/routes.rb": [
+      "/Users/matt/code/mikesilvis/shindig/config/routes.rb": [
         1,
         null,
         1,
@@ -452,10 +452,12 @@
         1,
         null
       ],
-      "/Users/mikesilvis/Documents/Hungry-Academy/projects/shindig/app/models/user.rb": [
+      "/Users/matt/code/mikesilvis/shindig/app/models/user.rb": [
         1,
         1,
+        null,
         1,
+        null,
         1,
         1,
         1,
@@ -463,11 +465,29 @@
         1,
         null,
         1,
+        null,
         1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null,
+        null,
         null,
         null
       ],
-      "/Users/mikesilvis/Documents/Hungry-Academy/projects/shindig/app/models/user_oath_helper.rb": [
+      "/Users/matt/code/mikesilvis/shindig/app/models/user_oath_helper.rb": [
         1,
         null,
         1,
@@ -508,23 +528,31 @@
         0,
         null,
         null,
+        2,
+        0,
+        null,
+        null,
+        2,
+        0,
+        null,
+        null,
         null,
         null
       ],
-      "/Users/mikesilvis/Documents/Hungry-Academy/projects/shindig/app/controllers/application_controller.rb": [
+      "/Users/matt/code/mikesilvis/shindig/app/controllers/application_controller.rb": [
         1,
         1,
         null
       ],
-      "/Users/mikesilvis/Documents/Hungry-Academy/projects/shindig/app/helpers/application_helper.rb": [
+      "/Users/matt/code/mikesilvis/shindig/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/mikesilvis/Documents/Hungry-Academy/projects/shindig/app/helpers/attend_helper.rb": [
+      "/Users/matt/code/mikesilvis/shindig/app/helpers/attend_helper.rb": [
         1,
         null
       ],
-      "/Users/mikesilvis/Documents/Hungry-Academy/projects/shindig/app/controllers/attend_controller.rb": [
+      "/Users/matt/code/mikesilvis/shindig/app/controllers/attend_controller.rb": [
         1,
         1,
         0,
@@ -532,30 +560,8 @@
         null,
         null
       ],
-      "/Users/mikesilvis/Documents/Hungry-Academy/projects/shindig/app/controllers/events_controller.rb": [
+      "/Users/matt/code/mikesilvis/shindig/app/controllers/events_controller.rb": [
         1,
-        1,
-        0,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null
-      ],
-      "/Users/mikesilvis/Documents/Hungry-Academy/projects/shindig/app/models/event.rb": [
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
         1,
         0,
         null,
@@ -567,16 +573,38 @@
         1,
         0,
         null,
+        null
+      ],
+      "/Users/matt/code/mikesilvis/shindig/app/models/event.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
         null,
         null
       ],
-      "/Users/mikesilvis/Documents/Hungry-Academy/projects/shindig/app/controllers/home_controller.rb": [
+      "/Users/matt/code/mikesilvis/shindig/app/controllers/home_controller.rb": [
         1,
         1,
         null,
         null
       ],
-      "/Users/mikesilvis/Documents/Hungry-Academy/projects/shindig/app/controllers/users/omniauth_callbacks_controller.rb": [
+      "/Users/matt/code/mikesilvis/shindig/app/controllers/users/omniauth_callbacks_controller.rb": [
         1,
         null,
         1,
@@ -604,8 +632,29 @@
         null,
         null
       ],
-      "/Users/mikesilvis/Documents/Hungry-Academy/projects/shindig/app/lib/twitter_api.rb": [
+      "/Users/matt/code/mikesilvis/shindig/app/lib/tweep_importer.rb": [
         1,
+        null,
+        1,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/matt/code/mikesilvis/shindig/app/lib/twitter_api.rb": [
         1,
         null,
         1,
@@ -626,11 +675,14 @@
         null,
         null,
         1,
-        null,
-        1,
         0,
         null,
         null,
+        null,
+        null,
+        null,
+        null,
+        1,
         null,
         1,
         null,
@@ -643,15 +695,26 @@
         null,
         null
       ],
-      "/Users/mikesilvis/Documents/Hungry-Academy/projects/shindig/app/lib/twitter_user_importer.rb": [
-        1,
-        1,
+      "/Users/matt/code/mikesilvis/shindig/app/lib/twitter_user_fetcher.rb": [
         1,
         1,
         null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
         null
       ],
-      "/Users/mikesilvis/Documents/Hungry-Academy/projects/shindig/app/models/attendee.rb": [
+      "/Users/matt/code/mikesilvis/shindig/app/models/attendee.rb": [
         1,
         1,
         1,
@@ -664,7 +727,7 @@
         null,
         null
       ],
-      "/Users/mikesilvis/Documents/Hungry-Academy/projects/shindig/app/models/authentication.rb": [
+      "/Users/matt/code/mikesilvis/shindig/app/models/authentication.rb": [
         1,
         1,
         1,
@@ -697,19 +760,29 @@
         null,
         null
       ],
-      "/Users/mikesilvis/Documents/Hungry-Academy/projects/shindig/app/models/twitter_follower.rb": [
+      "/Users/matt/code/mikesilvis/shindig/app/models/tweep.rb": [
         1,
+        1,
+        null,
         1,
         1,
         null,
         null
       ],
-      "/Users/mikesilvis/Documents/Hungry-Academy/projects/shindig/app/serializers/event_serializer.rb": [
+      "/Users/matt/code/mikesilvis/shindig/app/models/users_tweep.rb": [
+        1,
+        1,
+        null,
         1,
         1,
         null
       ],
-      "/Users/mikesilvis/Documents/Hungry-Academy/projects/shindig/spec/support/twitter_support.rb": [
+      "/Users/matt/code/mikesilvis/shindig/app/serializers/event_serializer.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/matt/code/mikesilvis/shindig/spec/support/twitter_support.rb": [
         1,
         1,
         null,
@@ -721,6 +794,6 @@
         null
       ]
     },
-    "timestamp": 1340228367
+    "timestamp": 1340244797
   }
 }

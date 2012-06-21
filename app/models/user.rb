@@ -1,13 +1,33 @@
 class User < ActiveRecord::Base
+  include UserOathHelper
+
   devise :trackable, :omniauthable
-  validates_presence_of :username
-  validates_uniqueness_of :username
+
   has_many :authentications
-  has_many :twitter_followers
+  has_many :users_tweeps
+  has_many :tweeps, through: :users_tweeps
   has_many :events
   has_many :attendees
 
   attr_accessible :email, :password, :remember_me, :name, :username
-  include UserOathHelper
+
+  validates_presence_of :username
+  validates_uniqueness_of :username
+
+  def known_tweep_ids
+    tweeps.map(&:uid)
+  end
+
+  def add_tweep(tweep_user)
+    UsersTweep.transaction do
+      tweep = tweeps.create(username: tweep_user[:username],
+                            name:     tweep_user[:name],
+                            avatar:   tweep_user[:avatar],
+                            uid:      tweep_user[:uid])
+      users_tweeps.create(tweep_id: tweep.id)
+    end
+  end
+
 
 end
+

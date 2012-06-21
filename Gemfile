@@ -25,4 +25,7 @@ end
 group :development, :test do
  gem 'rspec-rails'
  gem 'simplecov'
+ gem 'guard'
+ gem 'guard-rspec'
+ gem 'growl'
 end

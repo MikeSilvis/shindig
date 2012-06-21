@@ -1,5 +1,5 @@
 require 'spec_helper'
 
-describe Attendee do
+describe UsersTweep do
 
 end

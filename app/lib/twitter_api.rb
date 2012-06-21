@@ -1,37 +1,38 @@
 class TwitterApi
-  attr_reader :token, :secret, :client_class
 
-  def initialize(token, secret, client_class=Twitter::Client)
-    @token        = token
-    @secret       = secret
-    @client_class = client_class
+  def initialize(token, secret, client=nil)
+    @client   = client
+    @client ||= Twitter::Client.new(oauth_credentials(token, secret))
   end
 
   def get_users(*twitter_ids)
-    twitter_client.user(twitter_ids)
+    @client.users(twitter_ids)
+  end
+
+  def friend_ids
+   @client.friend_ids.ids
+  end
+
+  def follower_ids
+    @client.follower_ids.ids
   end
 
   def tweep_ids
-    twitter_client.follower_ids.ids
+    friend_ids & follower_ids
   end
 
-  def send_dm(username, content)
-    twitter_client.direct_message_create(username, content)
-  end
+  # def send_dm(username, content)
+  #   twitter_client.direct_message_create(username, content)
+  # end
 
   private
 
-  def twitter_client
-    @twitter_client ||= client_class.new(oauth_credentials)
-  end
-
-
-  def oauth_credentials
+  def oauth_credentials(token, secret)
     {
       :consumer_key       => TWITTER_KEY,
       :consumer_secret    => TWITTER_SECRET,
-      :oauth_token        => user.twitter.token,
-      :oauth_token_secret => user.twitter.secret
+      :oauth_token        => token,
+      :oauth_token_secret => secret
     }
   end
 
