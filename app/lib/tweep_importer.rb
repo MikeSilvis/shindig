@@ -7,13 +7,14 @@ class TweepImporter
     fetcher.fetch.each do |twitter_user|
       add_tweep_to(user, twitter_user)
     end
+    user.save
   end
 
   def self.add_tweep_to(user, twitter_user)
       user.add_tweep(:username => twitter_user.screen_name,
-                        :name     => twitter_user.name,
-                        :avatar   => twitter_user.profile_image_url,
-                        :uid      => twitter_user.id)
+                      :name     => twitter_user.name,
+                      :avatar   => twitter_user.profile_image_url,
+                      :uid      => twitter_user.id)
   end
   private_class_method :add_tweep_to
 

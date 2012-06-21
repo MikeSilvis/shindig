@@ -17,12 +17,12 @@ describe User do
     end
   end
 
-  describe "#build_tweep" do
+  describe "#add_tweep" do
     let(:user) { User.new }
-    let(:tweet_user) { double(username: "Mike", name: "Mike", avatar: "http://gorilla.png", uid: "123") }
+    let(:tweet_user) { {username: "Mike", name: "Mike", avatar: "http://gorilla.png", uid: "123"} }
 
     it "builds the tweep in the user's tweeps" do
-      user.build_tweep(tweet_user)
+      user.add_tweep(tweet_user)
       user.tweeps.first.username.should == "Mike"
     end
   end

@@ -19,15 +19,16 @@ class User < ActiveRecord::Base
   end
 
   def add_tweep(tweep_user)
-    UsersTweep.transaction do
-      tweep = tweeps.create(username: tweep_user[:username],
-                            name:     tweep_user[:name],
-                            avatar:   tweep_user[:avatar],
-                            uid:      tweep_user[:uid])
-      users_tweeps.create(tweep_id: tweep.id)
-    end
+    tweeps.build(username: tweep_user[:username],
+                 name:     tweep_user[:name],
+                 avatar:   tweep_user[:avatar],
+                 uid:      tweep_user[:uid])
   end
 
+  def add_tweep!(tweep_user)
+    add_tweep(tweep_user)
+    save
+  end
 
 end
 
