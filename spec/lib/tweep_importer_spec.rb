@@ -3,10 +3,12 @@ require 'spec_helper'
 class FakeUser
   attr_accessor :tweeps
 
-  def add_tweep!(attrs)
+  def add_tweep(attrs)
     @tweeps ||= []
     @tweeps << attrs
   end
+
+  def save; true; end
 end
 
 class FakeTwitterUser
