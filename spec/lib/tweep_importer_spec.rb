@@ -3,14 +3,14 @@ require 'spec_helper'
 class FakeUser
   attr_accessor :tweeps
 
-  def add_tweep(attrs)
+  def add_tweep!(attrs)
     @tweeps ||= []
     @tweeps << attrs
   end
 end
 
 class FakeTwitterUser
-  attr_accessor :username, :name, :avatar, :uid
+  attr_accessor :screen_name, :name, :profile_image_url, :id
 end
 
 describe TweepImporter do
