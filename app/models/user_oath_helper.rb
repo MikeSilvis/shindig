@@ -1,4 +1,4 @@
-module  UserOathHelper
+module UserOathHelper
 
   def self.included(klass)
     klass.extend UserOathHelper::ClassMethods
@@ -22,7 +22,11 @@ module  UserOathHelper
 
     def verify_from_service(service, data)
       service_hash = User.send("#{service}_hash".to_sym, data)
-      User.where(username: data["nickname"]).first_or_create(service_hash)
+      User.where(username: username(data).downcase).first_or_create(service_hash)
+    end
+
+    def username(data)
+      data["nickname"] || data["email"]
     end
 
     SERVICES.each do |service|

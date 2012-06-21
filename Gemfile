@@ -28,4 +28,6 @@ group :development, :test do
  gem 'guard'
  gem 'guard-rspec'
  gem 'growl'
+ gem 'capybara'
+ gem 'factory_girl'
 end

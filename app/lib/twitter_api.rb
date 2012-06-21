@@ -10,7 +10,7 @@ class TwitterApi
   end
 
   def friend_ids
-   @client.friend_ids.ids
+    @client.friend_ids.ids
   end
 
   def follower_ids
@@ -21,9 +21,9 @@ class TwitterApi
     friend_ids & follower_ids
   end
 
-  # def send_dm(username, content)
-  #   twitter_client.direct_message_create(username, content)
-  # end
+  def send_dm(username, content)
+    twitter_client.direct_message_create(username, content)
+  end
 
   private
 

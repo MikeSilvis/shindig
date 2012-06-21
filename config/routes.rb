@@ -4,11 +4,7 @@ Shindig::Application.routes.draw do
 
   resources :events do
     resource :attend
-  end
-
-  devise_scope :user do
-    get '/signup' => 'devise/registrations#new'
-    get '/login' => 'devise/sessions#new'
+    resources :messages
   end
 
   root :to => "home#index"

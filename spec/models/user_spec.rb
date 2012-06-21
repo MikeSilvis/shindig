@@ -4,16 +4,13 @@ describe User do
 
   describe "#known_tweep_ids" do
     let(:tweeps) do
-      [
-        Tweep.new(:uid => '123'),
-        Tweep.new(:uid => '456')
-      ]
+      [ Tweep.new(:uid => 123), Tweep.new(:uid => 456) ]
     end
 
     let(:user) { User.new.tap{|u| u.tweeps = tweeps } }
 
     it "returns uid of all tweeps" do
-      user.known_tweep_ids.should == ['123', '456']
+      user.known_tweep_ids.should == [123, 456]
     end
   end
 

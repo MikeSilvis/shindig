@@ -11,7 +11,6 @@ class TwitterUserFetcher
     potential_import_ids -= blacklist_ids
 
     return [] if potential_import_ids.empty?
-
     twitter_api.get_users(potential_import_ids)
   end
 
