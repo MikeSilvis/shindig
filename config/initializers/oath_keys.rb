@@ -1,4 +1,4 @@
-unless defined?(TWITTER_KEY)
+unless defined?(GOOGLE_KEY)
   TWITTER_KEY = "2yBLkeHyddvYDCkLNvZXQ"
   TWITTER_SECRET = "sbevPXWzNwyrrKOob4poYGlPFGocNYHk7U75QjFcm4"
 

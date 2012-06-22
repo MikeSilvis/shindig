@@ -2,14 +2,16 @@ require 'faraday'
 require 'json'
 
 class GoogleCalendar
-  attr_accessor :client, :token, :user_email, :time_start, :time_end
+  attr_accessor :client, :token, :user_email, :time_start, :time_end, :user
   CALENDAR_URL = '/calendar/v3/freeBusy?fields=calendars&key=15981128324.apps.googleusercontent.com'
 
-  def initialize(token, user_email, time_start, time_end)
-    @token = "Bearer #{token}"
-    @user_email = user_email
+  def initialize(user, time_start, time_end)
+    RefreshGoogleToken.new(user.google)
+    @token = "Bearer #{user.google.token}"
+    @user = user
+    @user_email = user.email
     @time_start = time_start
-    @time_end = time_end
+    @time_end   = time_end
   end
 
   def get_availability
@@ -19,23 +21,22 @@ class GoogleCalendar
              req.headers['Authorization'] = token
              req.body = body.to_json
           end
-     resp.body
+     JSON.parse(resp.body)
+  end
+
+  def save_availability
+    get_availability["calendars"]["#{user.email}"]["busy"].each do |appt|
+      user.availabilities.create!(time_start: Time.parse(appt["start"]),
+                                  time_end: Time.parse(appt["end"]))
+    end
   end
 
   def client
     @client ||= Faraday.new(:url => 'https://www.googleapis.com') do |faraday|
-                faraday.request  :url_encoded
-                faraday.response :logger
-                faraday.adapter  Faraday.default_adapter
-              end
-  end
-
-  def time_start_formatted
-    Time.utc(time_start[0],time_start[1],time_start[2], time_start[3], time_start[4]).round.iso8601(3)
-  end
-
-  def time_end_formatted
-    Time.utc(time_end[0],time_end[1],time_end[2], time_end[3], time_end[4]).round.iso8601(3)
+                  faraday.request  :url_encoded
+                  faraday.response :logger
+                  faraday.adapter  Faraday.default_adapter
+                end
   end
 
   def body
@@ -45,8 +46,8 @@ class GoogleCalendar
         id: user_email
       }
     ],
-      timeMin: time_start_formatted,
-      timeMax: time_end_formatted
+      timeMin: time_start.round.iso8601(3),
+      timeMax: time_end.round.iso8601(3)
   }
   end
 end

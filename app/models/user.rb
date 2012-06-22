@@ -1,6 +1,5 @@
 class User < ActiveRecord::Base
   include UserOathHelper
-
   devise :trackable, :omniauthable
 
   has_many :authentications

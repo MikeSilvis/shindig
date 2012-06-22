@@ -16,7 +16,7 @@ module UserOathHelper
       {
         name: data["name"],
         username: data["email"],
-        email: data["email"],
+        email: data["email"]
       }
     end
 

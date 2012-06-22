@@ -3,7 +3,7 @@ require 'json'
 
 class GoogleCalendar
   attr_accessor :client, :token, :user_email, :time_start, :time_end, :user
-  CALENDAR_URL = '/calendar/v3/freeBusy?fields=calendars&key=15981128324.apps.googleusercontent.com'
+  CALENDAR_URL = "/calendar/v3/freeBusy?fields=calendars&key=#{GOOGLE_KEY}"
 
   def initialize(user, time_start, time_end)
     RefreshGoogleToken.new(user.google)

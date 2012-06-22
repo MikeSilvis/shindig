@@ -4,6 +4,7 @@ class Event < ActiveRecord::Base
   belongs_to :user
   has_many :attendees
   has_many :messages
+  has_many :possible_times
   before_create :generate_token
   after_create :add_owner_to_party
 
@@ -25,6 +26,19 @@ class Event < ActiveRecord::Base
 
   def is_owner?(user)
     user.id == user_id
+  end
+
+  def best_time
+    # For each Possible Time
+      # Find each attendee
+      # determine if available
+      # count it up
+  end
+
+  def determine_availabity_of_attendees
+    attendee.each do |person|
+      g = GoogleCalendar.new(person, )
+    end
   end
 
 end
