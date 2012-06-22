@@ -40,6 +40,15 @@ GEM
     bcrypt-ruby (3.0.1)
     blankslate (2.1.2.4)
     builder (3.0.0)
+    capybara (1.1.2)
+      mime-types (>= 1.16)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      selenium-webdriver (~> 2.0)
+      xpath (~> 0.1.4)
+    childprocess (0.3.1)
+      ffi (~> 1.0.6)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -56,10 +65,19 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    factory_girl (3.0.0)
+      activesupport (>= 3.0.0)
     faraday (0.7.6)
       addressable (~> 2.2)
       multipart-post (~> 1.1)
       rack (~> 1.1)
+    ffi (1.0.11)
+    growl (1.0.3)
+    guard (1.2.1)
+      listen (>= 0.4.2)
+      thor (>= 0.14.6)
+    guard-rspec (1.1.0)
+      guard (>= 1.1)
     hashie (1.2.0)
     hike (1.2.1)
     httpauth (0.1)
@@ -72,6 +90,10 @@ GEM
       railties (>= 3.2.0, < 5.0)
       thor (~> 0.14)
     json (1.7.3)
+    listen (0.4.6)
+      rb-fchange (~> 0.0.5)
+      rb-fsevent (~> 0.9.1)
+      rb-inotify (~> 0.8.8)
     mail (2.4.4)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -79,6 +101,7 @@ GEM
     mime-types (1.18)
     multi_json (1.3.6)
     multipart-post (1.1.5)
+    nokogiri (1.5.2)
     oauth (0.4.5)
     oauth2 (0.6.1)
       faraday (~> 0.7)
@@ -129,6 +152,11 @@ GEM
       rdoc (~> 3.4)
       thor (~> 0.14.6)
     rake (0.9.2.2)
+    rb-fchange (0.0.5)
+      ffi
+    rb-fsevent (0.9.1)
+    rb-inotify (0.8.8)
+      ffi (>= 0.5.0)
     rdoc (3.12)
       json (~> 1.4)
     rspec (2.9.0)
@@ -145,11 +173,17 @@ GEM
       railties (>= 3.0)
       rspec (~> 2.9.0)
     ruby-openid (2.1.8)
+    rubyzip (0.9.6.1)
     sass (3.1.19)
     sass-rails (3.2.5)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
+    selenium-webdriver (2.20.0)
+      childprocess (>= 0.2.5)
+      ffi (~> 1.0)
+      multi_json (~> 1.0)
+      rubyzip
     simple_form (2.0.1)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
@@ -183,14 +217,22 @@ GEM
       multi_json (~> 1.3)
     warden (1.2.1)
       rack (>= 1.0)
+    xpath (0.1.4)
+      nokogiri (~> 1.3)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   active_model_serializers!
+  capybara
   coffee-rails (~> 3.2.1)
   devise
+  factory_girl
+  faraday
+  growl
+  guard
+  guard-rspec
   jbuilder
   jquery-rails
   omniauth

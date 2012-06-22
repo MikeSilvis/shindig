@@ -3,6 +3,7 @@ class Event < ActiveRecord::Base
   validates_presence_of :name, :description
   belongs_to :user
   has_many :attendees
+  has_many :messages
   before_create :generate_token
   after_create :add_owner_to_party
 
@@ -11,11 +12,19 @@ class Event < ActiveRecord::Base
   end
 
   def generate_token
-    self.token = Digest::SHA1.hexdigest(self.name + self.description)
+    self.token = Digest::SHA1.hexdigest(self.name + self.description + rand(10000).to_s)
   end
 
   def add_owner_to_party
-    Attendee.create(user_id: user_id, event_id: id)
+    join_event(user_id)
+  end
+
+  def join_event(new_user_id)
+    attendees.create(user_id: new_user_id)
+  end
+
+  def is_owner?(user)
+    user.id == user_id
   end
 
 end
