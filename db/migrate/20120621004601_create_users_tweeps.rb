@@ -3,6 +3,7 @@ class CreateUsersTweeps < ActiveRecord::Migration
     create_table :users_tweeps do |t|
       t.integer :user_id
       t.integer :tweep_id
+      t.integer :uid
 
       t.timestamps
     end

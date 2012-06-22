@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   has_many :tweeps, through: :users_tweeps
   has_many :events
   has_many :attendees
+  has_many :availabilities
 
   attr_accessible :email, :password, :remember_me, :name, :username
 

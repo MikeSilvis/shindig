@@ -16,7 +16,7 @@ module UserOathHelper
       {
         name: data["name"],
         username: data["email"],
-        email: data["email"]
+        email: data["email"],
       }
     end
 
@@ -39,15 +39,15 @@ module UserOathHelper
 
   SERVICES.each do |service|
     define_method "#{service}".to_sym do
-      authentications.send("#{service}".to_sym)
+      authentications.send("#{service}".to_sym).first
     end
 
     define_method "#{service}_token".to_sym do
-      authentications.send("#{service}".to_sym).token
+      authentications.send("#{service}".to_sym).first.token
     end
 
     define_method "#{service}_secret".to_sym do
-      authentications.send("#{service}".to_sym).secret
+      authentications.send("#{service}".to_sym).first.secret
     end
   end
 
