@@ -1,5 +1,5 @@
 require 'spec_helper'
 
-describe Availability do
+describe PossibleAttendee do
   pending "add some examples to (or delete) #{__FILE__}"
 end

@@ -29,16 +29,7 @@ class Event < ActiveRecord::Base
   end
 
   def best_time
-    # For each Possible Time
-      # Find each attendee
-      # determine if available
-      # count it up
-  end
-
-  def determine_availabity_of_attendees
-    attendee.each do |person|
-      g = GoogleCalendar.new(person, )
-    end
+    possible_times.sort_by(&:possible_attendees_count).first
   end
 
 end
