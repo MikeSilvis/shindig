@@ -8,6 +8,6 @@ Shindig::Application.routes.draw do
     resource :attend
     resources :messages
   end
-
+  resources :restaraunts, only: [:index]
   root :to => "home#index"
 end

@@ -4,6 +4,7 @@ class Event < ActiveRecord::Base
   belongs_to :user
   has_many :attendees
   has_many :messages
+  has_many :menus
   has_many :possible_times
   before_create :generate_token
   after_create :add_owner_to_party

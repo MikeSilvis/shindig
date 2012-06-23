@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120623000001) do
+ActiveRecord::Schema.define(:version => 20120623114935) do
 
   create_table "attendees", :force => true do |t|
     t.integer  "user_id"
@@ -44,6 +44,14 @@ ActiveRecord::Schema.define(:version => 20120623000001) do
     t.string   "token"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "menus", :force => true do |t|
+    t.integer  "restaraunt_id"
+    t.string   "event_id"
+    t.integer  "liked",         :default => 0
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
   create_table "messages", :force => true do |t|
