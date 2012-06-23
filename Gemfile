@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.3'
-gem 'sqlite3'
 ## Helpers
 gem 'devise'
 gem 'slim'
@@ -31,4 +30,9 @@ group :development, :test do
  gem 'growl'
  gem 'capybara'
  gem 'factory_girl'
+ gem 'sqlite3'
+ gem 'newrelic_rpm'
+end
+group :production do
+  gem 'pg'
 end
