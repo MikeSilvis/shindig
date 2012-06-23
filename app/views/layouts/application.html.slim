@@ -5,10 +5,9 @@ html
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
+
   body
-    p.user= current_user.username
-    p.user= "Twitter: #{current_user.twitter.username}"
-    p.user= "Google: #{current_user.google.username}"
-    p.notice= notice
-    p.alert= alert
-    = yield
+    = render "layouts/navbar"
+    .container#main_content
+      = render "layouts/flash_message"
+      = yield
