@@ -19,6 +19,7 @@ private
   end
 
   def create_auth(service)
+    current_user.update_attributes(User.send("#{service}_hash".to_sym, data["info"]))
     current_user.authentications.send("find_or_create_#{service}".to_sym, data)
   end
 

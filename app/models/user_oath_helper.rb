@@ -15,7 +15,6 @@ module UserOathHelper
     def google_hash(data)
       {
         name: data["name"],
-        username: data["email"],
         email: data["email"]
       }
     end
@@ -49,6 +48,7 @@ module UserOathHelper
     define_method "#{service}_secret".to_sym do
       authentications.send("#{service}".to_sym).first.secret
     end
+
   end
 
 end

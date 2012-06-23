@@ -1,4 +1,6 @@
 Shindig::Application.routes.draw do
+  require 'resque/server'
+  mount Resque::Server.new, :at => "/resque"
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 

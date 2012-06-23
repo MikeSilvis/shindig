@@ -1,16 +1,17 @@
-require 'faraday'
-require 'json'
-
 class GoogleCalendar
   attr_accessor :client, :token, :possible_time, :user
   CALENDAR_URL = '/calendar/v3/freeBusy?fields=calendars&key=15981128324.apps.googleusercontent.com'
 
   def initialize(user, possible_time)
-    RefreshGoogleToken.new(user.google)
+    get_new_token(user)
     @token = "Bearer #{user.google.token}"
     @user = user
-    @user_email = user.email
     @possible_time = possible_time
+  end
+
+  def get_new_token(user)
+    rgt = RefreshGoogleToken.new(user.google)
+    rgt.save_token
   end
 
   def get_availability
@@ -25,9 +26,9 @@ class GoogleCalendar
 
   def save_availability
     if get_availability["calendars"]["#{user.email}"]["busy"].size == 0
-      user.possible_attendees.create(possible_time_id: possible_time.id)
-    else
       user.possible_attendees.where(possible_time_id: possible_time.id).delete_all
+    else
+      user.possible_attendees.create(possible_time_id: possible_time.id)
     end
   end
 

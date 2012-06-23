@@ -16,6 +16,7 @@ gem 'omniauth-openid'
 gem 'omniauth-google-oauth2'
 gem 'twitter'
 gem 'faraday'
+gem 'resque', :require => "resque/server"
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'

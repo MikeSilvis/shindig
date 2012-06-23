@@ -23,5 +23,12 @@ describe User do
       user.tweeps.first.username.should == "Mike"
     end
   end
+  describe "#add_tweep!" do
+    let(:user) { User.new }
+    let(:tweet_user) { {username: "Mike", name: "Mike", avatar: "http://gorilla.png", uid: "123"} }
+    it "saves the tweep" do
+      user.add_tweep!(tweet_user).should == false
+    end
+  end
 
 end

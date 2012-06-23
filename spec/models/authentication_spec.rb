@@ -43,5 +43,12 @@ describe Authentication do
       google3.user.google.id.should == google3.id
     end
   end
-
+  describe "Returns tokens" do
+    it "can return google token" do
+      google3.user.google_token.should == "ya29.AHES6ZT9yqjvk1tUHn-n6j7KuPed1bURetPXap0cPH7yyAV8W2J_YQ"
+    end
+    it "can return twitter token" do
+      twitter3.user.twitter_token.should == "314378901-qUB9nOV0ejMk2kiw5ohUzadv2sE6zChISxjxAxKZ"
+    end
+  end
 end

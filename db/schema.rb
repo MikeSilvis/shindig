@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120622221953) do
+ActiveRecord::Schema.define(:version => 20120623000001) do
 
   create_table "attendees", :force => true do |t|
     t.integer  "user_id"
@@ -25,19 +25,12 @@ ActiveRecord::Schema.define(:version => 20120622221953) do
     t.string   "provider"
     t.string   "uid"
     t.string   "token"
+    t.string   "secret"
     t.string   "username"
     t.string   "avatar"
     t.string   "refresh_token"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
-  end
-
-  create_table "availabilities", :force => true do |t|
-    t.integer  "user_id"
-    t.datetime "time_start"
-    t.datetime "time_end"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
   create_table "events", :force => true do |t|
@@ -72,9 +65,19 @@ ActiveRecord::Schema.define(:version => 20120622221953) do
     t.integer  "event_id"
     t.datetime "time_start"
     t.datetime "time_end"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
-    t.integer  "attendee_count"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "restaraunts", :force => true do |t|
+    t.string   "name"
+    t.integer  "ls_id"
+    t.string   "address"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "lat"
+    t.string   "long"
+    t.string   "venue_id"
   end
 
   create_table "tweeps", :force => true do |t|
