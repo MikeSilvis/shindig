@@ -1,6 +1,3 @@
-div class="container"
-  div class="row pull_down_notice"
-    div class="twelve columns"
-      - flash.each do |key, value|
-        .alert-box(class="#{key} flash")
-          strong= value
+- flash.each do |key, value|
+  .alert.alert-info
+    strong= value

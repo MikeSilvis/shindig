@@ -12,4 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require app
 //= require_tree .
+
+jQuery(function() {
+  if ($("#app").length) {
+    return new App({
+      el: $("#app")
+    });
+  }
+});

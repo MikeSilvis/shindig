@@ -30,5 +30,9 @@ class User < ActiveRecord::Base
     save
   end
 
+  def avatar
+    twitter.avatar if twitter
+  end
+
 end
 

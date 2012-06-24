@@ -4,15 +4,17 @@ class EventsController < ApplicationController
   before_filter :require_admin, only: [:edit, :update]
 
   def index
-    render json: Event.all
+    @events = Event.all
   end
 
   def show
-    render json: Event.find(params[:id])
   end
 
   def create
-    Event.create(params[:event])
+    @event = Event.new(params[:event])
+    if @event.save
+      @event
+    end
   end
 
   def edit

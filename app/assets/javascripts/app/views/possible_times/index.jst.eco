@@ -1,0 +1,9 @@
+<div id="calendar"></div>
+
+<div class="modal hide" id="timeModal">
+  <div id="modalContent">
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn" data-dismiss="modal">Close</a>
+  </div>
+</div>

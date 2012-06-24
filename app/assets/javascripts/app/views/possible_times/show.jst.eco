@@ -1,0 +1,9 @@
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal">×</button>
+  <h3><%= @date %>: <%= @time_start %> - <%= @time_end %></h3>
+</div>
+<div class="modal-body">
+  <p style='font-size: .7em;'>
+    * Note: Participants are based solely on availability of their personal Google Calendar Schedule
+  </p>
+</div>

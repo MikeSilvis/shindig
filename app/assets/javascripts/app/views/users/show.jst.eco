@@ -1,0 +1,7 @@
+<div class="span2">
+  <img src="<%= @avatar%>" class='avatar'>
+</div>
+<div class="span6">
+  <h3><%= @name %></h3>
+  <h3>@<%= @username %></h3>
+</div>

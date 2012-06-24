@@ -1,13 +1,10 @@
 .navbar.navbar-fixed-top
   .navbar-inner
     .container
-      a.brand ShindigWith.me
+      a.brand= image_tag "shindigwithme-logo.png"
       .nav-collapse
-        ul.nav
-          li
-          li.divider-vertical
         ul.nav.pull-right
           li
-            a Built by Mike Silvis
-          li
-            a 4 Mike Silvis
+            a(style="line-height:30px")
+              - if current_user
+                = "signed in as: #{current_user.username}"

@@ -2,5 +2,17 @@ body {
   background-image: url("bg.png");
 }
 #main_content {
-  margin-top:50px;
+  margin-top:80px;
+}
+.getting_started_image {
+ padding-left: 30px;
+}
+.stack > *:not(.active) {
+  display: none;
+}
+.avatar {
+  border:2px solid #317eac;
+}
+.no_margin {
+  margin-left:0px;
 }
