@@ -7,7 +7,6 @@ gem 'slim'
 gem 'simple_form'
 gem 'jquery-rails'
 gem 'jbuilder'
-gem "active_model_serializers", :git => "git://github.com/josevalim/active_model_serializers.git"
 ## Services
 gem 'omniauth'
 gem 'omniauth-twitter'
@@ -16,7 +15,8 @@ gem 'omniauth-google-oauth2'
 gem 'twitter'
 gem 'faraday'
 gem 'resque', :require => "resque/server"
-gem "spine-rails"
+gem 'spine-rails'
+gem 'pusher'
 gem 'eco'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

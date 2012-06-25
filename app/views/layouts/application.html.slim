@@ -1,12 +1,13 @@
-doctype
+doctype html
 html
   head
-    title Shindig
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
+    = pusher_meta_tags
     = csrf_meta_tags
+    title Shindig
 
-  body
+  head
     = render "layouts/navbar"
     .container#main_content
       = render "layouts/flash_message"

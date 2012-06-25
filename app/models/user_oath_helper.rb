@@ -8,7 +8,8 @@ module UserOathHelper
     def twitter_hash(data)
       {
         name: data["name"],
-        username: data["nickname"]
+        username: data["nickname"],
+        avatar: data["image"]
       }
     end
 

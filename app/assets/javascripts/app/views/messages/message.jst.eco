@@ -1,0 +1,11 @@
+<div class='row' style='padding-bottom:15px;'>
+  <div class="span1">
+    <img src="<%= @user.avatar %>" class='avatar' width="30px">
+  </div>
+  <div class="span7">
+    <div class="posted_at">
+      <%= @user.username %> posted <%= @created_at %> ago:
+    </div>
+    <%= @content %>
+  </div>
+</div>

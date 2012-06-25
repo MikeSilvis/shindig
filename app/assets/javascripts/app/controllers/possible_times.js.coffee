@@ -18,8 +18,7 @@ class App.TimeItem extends Spine.Controller
         PossibleTime.fetch({id: this.id})
 
     render: =>
-        @time = PossibleTime.first()
-        console.log @time
+        @time = PossibleTime.find(this.id)
         $('#timeModal').modal('show')
         $("#modalContent").html("")
         $("#modalContent").append(@view("possible_times/show")(@time))

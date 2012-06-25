@@ -6,7 +6,7 @@ class Show extends Spine.Controller
   constructor: ->
     super
     Event.bind 'refresh change', @render
-    Event.fetch({id: event_id})
+    Event.fetch({id: scoped_event_id})
 
   render: =>
     @event = Event.first()

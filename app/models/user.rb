@@ -8,8 +8,8 @@ class User < ActiveRecord::Base
   has_many :events
   has_many :attendees
   has_many :possible_attendees
-
-  attr_accessible :email, :password, :remember_me, :name, :username
+  has_many :messages
+  attr_accessible :email, :password, :remember_me, :name, :username, :avatar
 
   validates_presence_of :username
   validates_uniqueness_of :username

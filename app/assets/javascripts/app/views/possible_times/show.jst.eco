@@ -3,6 +3,14 @@
   <h3><%= @date %>: <%= @time_start %> - <%= @time_end %></h3>
 </div>
 <div class="modal-body">
+  Total Possible Attendees: <%= @total_attendees %>
+  <hr>
+  <% for user in @possible_attendees: %>
+    <p>
+      <img src="<%= user.avatar %>">
+      <%= user.name %>
+    </p>
+  <% end %>
   <p style='font-size: .7em;'>
     * Note: Participants are based solely on availability of their personal Google Calendar Schedule
   </p>

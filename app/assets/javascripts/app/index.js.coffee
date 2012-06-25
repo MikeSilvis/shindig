@@ -17,8 +17,9 @@ class App extends Spine.Controller
     super
     @append(@events = new App.Events)
     @append(@possible_times = new App.PossibleTimes)
+    @append(@messages = new App.Messages)
 
     # Spine.Route.setup()
 
 window.App = App
-window.event_id = new ParamsFinder().id()
+window.scoped_event_id = new ParamsFinder().id()

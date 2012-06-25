@@ -1,3 +1,4 @@
+<h2>Possible Shindig Times: </h2>
 <div id="calendar"></div>
 
 <div class="modal hide" id="timeModal">
