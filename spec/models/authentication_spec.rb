@@ -1,13 +1,15 @@
 require 'spec_helper'
 
 describe Authentication do
+  before(:each) do
+    Authentication.any_instance.stub(:import_tweeps).and_return(true)
+  end
   let(:twitter_data) { JSON.parse(File.read("#{::Rails.root}/spec/fixtures/service_responses/twitter_response.json")) }
   let(:google_data)  { JSON.parse(File.read("#{::Rails.root}/spec/fixtures/service_responses/google_response.json")) }
   let(:twitter1)     { User.verify_twitter(twitter_data) }
   let(:twitter2)     { User.verify_twitter(twitter_data) }
   let(:google1)      { twitter1.user.authentications.find_or_create_google(google_data)   }
   let(:google2)      { twitter2.user.authentications.find_or_create_google(google_data)   }
-
   let(:google3)      { User.verify_google(google_data) }
   let(:twitter3)     { google3.user.authentications.find_or_create_twitter(twitter_data) }
 

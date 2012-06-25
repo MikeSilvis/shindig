@@ -1,0 +1,3 @@
+<li>
+  <h3><%= @restaraunt.name %></h3>
+</li>

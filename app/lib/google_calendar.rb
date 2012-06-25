@@ -26,9 +26,9 @@ class GoogleCalendar
 
   def save_availability
     if get_availability["calendars"]["#{user.email}"]["busy"].size == 0
-      user.possible_attendees.where(possible_time_id: possible_time.id).delete_all
-    else
       user.possible_attendees.create(possible_time_id: possible_time.id)
+    else
+      user.possible_attendees.where(possible_time_id: possible_time.id).destroy_all
     end
   end
 

@@ -1,4 +1,5 @@
 #= require pusher
+
 $ = jQuery
 
 class PusherHandler extends Spine.Module
@@ -11,7 +12,6 @@ class PusherHandler extends Spine.Module
 
   process: (type, msg) =>
     if type == "create"
-      @msg_id = msg.id
-      App.Message.fetch({id: @msg_id})
+      App.Message.fetch({id: msg.id})
 
 $ -> new PusherHandler

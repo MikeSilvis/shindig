@@ -1,8 +1,8 @@
-class PullAvailability
-  @queue = :availability
+class PullAvailabilityTime
+  @queue = :availability_time
 
   def self.perform(possible_time_id)
-    PullAvailability.run(PossibleTime.find(possible_time_id))
+    PullAvailabilityTime.run(PossibleTime.find(possible_time_id))
   end
 
   def self.run(possible_time)

@@ -25,19 +25,12 @@ ActiveRecord::Schema.define(:version => 20120623114935) do
     t.string   "provider"
     t.string   "uid"
     t.string   "token"
+    t.string   "secret"
     t.string   "username"
     t.string   "avatar"
     t.string   "refresh_token"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
-  end
-
-  create_table "availabilities", :force => true do |t|
-    t.integer  "user_id"
-    t.datetime "time_start"
-    t.datetime "time_end"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
   create_table "events", :force => true do |t|
@@ -55,7 +48,7 @@ ActiveRecord::Schema.define(:version => 20120623114935) do
 
   create_table "menus", :force => true do |t|
     t.integer  "restaraunt_id"
-    t.string   "event_id"
+    t.integer  "event_id"
     t.integer  "liked",         :default => 0
     t.datetime "created_at",                   :null => false
     t.datetime "updated_at",                   :null => false
@@ -80,9 +73,8 @@ ActiveRecord::Schema.define(:version => 20120623114935) do
     t.integer  "event_id"
     t.datetime "time_start"
     t.datetime "time_end"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
-    t.integer  "attendee_count"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "restaraunts", :force => true do |t|
@@ -111,6 +103,7 @@ ActiveRecord::Schema.define(:version => 20120623114935) do
     t.string   "encrypted_password",     :default => "", :null => false
     t.string   "name"
     t.string   "username"
+    t.string   "avatar"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

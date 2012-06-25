@@ -1,6 +1,9 @@
 require 'spec_helper'
 
 describe Event do
+  before(:each) do
+  PossibleTime.any_instance.stub(:find_availability).and_return(true)
+  end
   let(:user1) { User.create(username: "mike" )}
   let(:event1) { Event.new(name: "Mike's Party", description: "Come Chill wit me") }
   let(:event2) { Event.new(name: "Mike's Party", description: "Rabble") }

@@ -18,6 +18,7 @@ class App extends Spine.Controller
     @append(@events = new App.Events)
     @append(@possible_times = new App.PossibleTimes)
     @append(@messages = new App.Messages)
+    @append(@menus = new App.Menus)
 
     # Spine.Route.setup()
 
