@@ -1,5 +1,23 @@
 class MenusController < ApplicationController
+
   def index
-    @menus = Menu.find_all_by_event_id(params[:event_id])
+    @menus = Menu.where(event_id: params[:event_id]).order("liked DESC")
+  end
+
+  def create
+    @menu = Menu.create(restaraunt_id: params[:menu][:restaraunt_id],
+                        event_id: params[:event_id],
+                        name: params[:menu][:name])
+    @menu
+  end
+
+  def show
+    @menu = Menu.find(params[:id])
+  end
+
+  def update
+    @menu = Menu.find(params[:id])
+    @menu.update_attributes(params[:menu])
+    @menu
   end
 end

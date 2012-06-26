@@ -2,7 +2,7 @@ class MessagesController < ApplicationController
   before_filter :require_login
 
   def index
-    @messages = Message.where(event_id: params[:event_id]).all
+    @messages = Message.where(event_id: params[:event_id]).limit(30).all
   end
 
   def show

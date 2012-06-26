@@ -8,7 +8,7 @@ class App.PossibleTimes extends Spine.Controller
     new CalendarMethods()
 
   render: =>
-    $(".times").append(@view("possible_times/index"))
+    @html @view("possible_times/index")
 
 class App.TimeItem extends Spine.Controller
 
@@ -20,14 +20,14 @@ class App.TimeItem extends Spine.Controller
     render: =>
         @time = PossibleTime.find(this.id)
         $('#timeModal').modal('show')
-        $("#modalContent").html("")
-        $("#modalContent").append(@view("possible_times/show")(@time))
+        $("#timeModalContent").html("")
+        $("#timeModalContent").append(@view("possible_times/show")(@time))
 
 class CalendarMethods
     constructor: ->
       $("#calendar").fullCalendar
         editable: false
-        events: "http://localhost:3000/events/1/possible_times.json"
+        events: "/events/#{scoped_event_id}/possible_times.json"
         eventClick: (calEvent, jsEvent, view) ->
           new App.TimeItem(calEvent)
 

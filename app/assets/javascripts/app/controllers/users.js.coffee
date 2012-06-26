@@ -9,4 +9,4 @@ class App.Users extends Spine.Controller
 
   render: =>
     @user = User.first()
-    $(".planner_info").append(@html @view('users/show')(@user))
+    @html @view('users/show')(@user)

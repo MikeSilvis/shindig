@@ -11,7 +11,12 @@ class PusherHandler extends Spine.Module
     @channel.bind_all @process
 
   process: (type, msg) =>
-    if type == "create"
-      App.Message.fetch({id: msg.id})
+    klass = eval("App.#{msg.class}") if msg
+
+    switch type
+      when 'create'
+        klass.fetch(id: msg.id)
+      when 'update'
+        klass.fetch(id: msg.id)
 
 $ -> new PusherHandler

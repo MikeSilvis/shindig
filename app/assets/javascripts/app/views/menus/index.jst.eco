@@ -1,5 +1,4 @@
-<h1>Possible Restaraunts</h1>
+<h2>Liked Restaraunts:</h2>
+<table class="table table-striped table_height menu_container">
 
-<div id="menu_container">
-
-</div>
+</table>

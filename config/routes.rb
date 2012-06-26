@@ -6,12 +6,18 @@ Shindig::Application.routes.draw do
 
   resources :events do
     resources :menus
-    resource :attend
+    resources :attendees
     resources :messages
     resources :possible_times
   end
 
   resources :users
-  resources :restaraunts, only: [:index]
+
+  resources :restaraunts do
+    collection do
+      get "search"
+    end
+  end
+
   root :to => "home#index"
 end

@@ -5,12 +5,19 @@
 <div class="modal-body">
   Total Possible Attendees: <%= @total_attendees %>
   <hr>
-  <% for user in @possible_attendees: %>
-    <p>
-      <img src="<%= user.avatar %>">
-      <%= user.name %>
-    </p>
-  <% end %>
+  <div class="row">
+    <% for user in @possible_attendees: %>
+      <div class="span4" style='margin-bottom:15px;'>
+        <div class="span3 no_margin">
+          <img src="<%= user.avatar%>" class='avatar'>
+        </div>
+        <div class="span7">
+          <h4><%= user.name %></h4>
+          <h4>@<%= user.username %></h4>
+        </div>
+      </div>
+    <% end %>
+  </div>
   <p style='font-size: .7em;'>
     * Note: Participants are based solely on availability of their personal Google Calendar Schedule
   </p>

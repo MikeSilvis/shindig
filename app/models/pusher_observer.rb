@@ -1,8 +1,12 @@
 class PusherObserver < ActiveRecord::Observer
-  observe :message
+  observe :message, :menu
 
   def after_create(rec)
     publish(:create, rec)
+  end
+
+  def after_update(rec)
+    publish(:update, rec)
   end
 
 private

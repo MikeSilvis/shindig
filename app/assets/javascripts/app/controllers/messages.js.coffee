@@ -11,7 +11,7 @@ class App.Messages extends Spine.Controller
     Message.fetch()
 
   render: =>
-    $(".messages").append(@html @view('messages/index'))
+    @html @view('messages/index')
     for message in Message.all()
       new App.MessageItem(message)
 

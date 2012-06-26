@@ -6,4 +6,4 @@ json.city @event.city
 json.state @event.state
 json.created_at @event.created_at
 json.updated_at @event.updated_at
-json.user_id @event.user_id
+json.user @event.user, :name, :username, :avatar, :email
