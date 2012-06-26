@@ -11,4 +11,8 @@ class AttendeesController < ApplicationController
     redirect_to event_path(params[:event_id]), notice: "Congrats on attending"
   end
 
+  def show
+    @attendee = Attendee.find(params[:id])
+  end
+
 end

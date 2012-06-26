@@ -1,3 +1,3 @@
 <h2>Location: </h2>
-MAP GOES HERE
-<!-- <iframe width="300" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=1375+Kenyon+St+NW,+Washington,+DC&amp;aq=0&amp;oq=13&amp;sll=38.895112,-77.036366&amp;sspn=0.325725,0.455246&amp;t=h&amp;ie=UTF8&amp;hq=&amp;hnear=1375+Kenyon+St+NW,+Washington,+District+of+Columbia+20010&amp;z=14&amp;ll=38.930145,-77.031955&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=1375+Kenyon+St+NW,+Washington,+DC&amp;aq=0&amp;oq=13&amp;sll=38.895112,-77.036366&amp;sspn=0.325725,0.455246&amp;t=h&amp;ie=UTF8&amp;hq=&amp;hnear=1375+Kenyon+St+NW,+Washington,+District+of+Columbia+20010&amp;z=14&amp;ll=38.930145,-77.031955">View Larger Map</a></small> -->
+<br>
+<div id="map_holder"></div>

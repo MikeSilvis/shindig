@@ -13,7 +13,7 @@ class App.Attendees extends Spine.Controller
   render: =>
     @attendees = Attendee.all()
     @html @view('attendees/index')(attendee_count: @attendees.length)
-    for attendee in Attendee.all()
+    for attendee in Attendee.all()[0..2]
       new App.AttendeeItem(attendee)
 
   createMessage: (e) ->

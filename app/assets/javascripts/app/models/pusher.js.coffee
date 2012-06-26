@@ -12,7 +12,6 @@ class PusherHandler extends Spine.Module
 
   process: (type, msg) =>
     klass = eval("App.#{msg.class}") if msg
-
     switch type
       when 'create'
         klass.fetch(id: msg.id)

@@ -12,3 +12,18 @@ class App.Events extends Spine.Controller
     @event = Event.first()
     @html @view('events/show')(@event)
     $("#map").append(@view('events/map')(@event))
+    new Map(@event.latitude, @event.longitude)
+
+class Map extends Spine.Controller
+  constructor: (lat, long) ->
+    map = new Microsoft.Maps.Map(document.getElementById("map_holder"),
+      credentials: "Akrds0LPok2BfVhlmrhoa5B_O2P_10AuLJg98mvTr0QlaWV9wss9Ih4xNO3HyTXC"
+      center: new Microsoft.Maps.Location(lat, long)
+      zoom: 15
+    )
+    pushpin = new Microsoft.Maps.Pushpin(map.getCenter(), null)
+    # pushpinClick = Microsoft.Maps.Events.addHandler(pushpin, 'click', @zap)
+    map.entities.push pushpin
+    pushpin.setLocation new Microsoft.Maps.Location(lat, long)
+
+  # zap: =>

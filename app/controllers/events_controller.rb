@@ -8,6 +8,7 @@ class EventsController < ApplicationController
   end
 
   def show
+    # @map = Event.all.to_gmaps4rails
   end
 
   def create

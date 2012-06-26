@@ -12,6 +12,7 @@ class MessagesController < ApplicationController
   def create
     @message = current_user.messages.create(content: params[:message][:content],
                                             event_id: params[:event_id])
+
     @message
   end
 

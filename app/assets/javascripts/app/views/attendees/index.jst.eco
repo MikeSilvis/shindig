@@ -1,12 +1,10 @@
-<h2> Total Attendees:
-  <span style="float:right"><%= @attendee_count %></span>
-</h2>
-<hr>
-
+<h3> Total Attendees:
+  <%= @attendee_count %>
+</h3>
+<br>
 <div id="attendee_container"></div>
 <div class='row span12'>
-  <hr>
-  <% if @attendee_count == 1: %>
+  <% if @attendee_count > 3: %>
     <a href="#">See More...</a>
   <% end %>
 </div>

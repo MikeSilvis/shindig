@@ -10,7 +10,6 @@ gem 'jbuilder'
 ## Services
 gem 'omniauth'
 gem 'omniauth-twitter'
-gem 'omniauth-openid'
 gem 'omniauth-google-oauth2'
 gem 'twitter'
 gem 'faraday'
@@ -18,6 +17,9 @@ gem 'resque', :require => "resque/server"
 gem 'spine-rails'
 gem 'pusher'
 gem 'eco'
+gem 'geocoder'
+gem 'gmaps4rails'
+
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'

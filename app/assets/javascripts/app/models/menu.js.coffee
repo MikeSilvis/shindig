@@ -7,4 +7,3 @@ class App.Menu extends Spine.Model
   incrementLikes: =>
     this.liked = this.liked + 1
     this.save()
-    # this.reload()

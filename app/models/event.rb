@@ -8,9 +8,15 @@ class Event < ActiveRecord::Base
   has_many :possible_times
   before_create :generate_token
   after_create :add_owner_to_party
+  after_create :geocode_data
+  acts_as_gmappable
 
   def self.find_from_token(token)
     Event.where(token: token).first
+  end
+
+  def gmaps4rails_address
+     "#{self.street}, #{self.zipcode}"
   end
 
   def generate_token
