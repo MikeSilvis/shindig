@@ -19,6 +19,10 @@ class Event < ActiveRecord::Base
      "#{self.street}, #{self.zipcode}"
   end
 
+  def geocode_data
+
+  end
+
   def generate_token
     self.token = Digest::SHA1.hexdigest(self.name + self.description + rand(10000).to_s)
   end

@@ -19,6 +19,7 @@ describe Event do
   end
   describe "#find_from_token" do
     it "finds the event" do
+      raise event3.inspect
       Event.find_from_token(event3.token).should be_a(Event)
     end
   end
