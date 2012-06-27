@@ -1,0 +1,6 @@
+<h2>Now that your finished, invite more friends!</h2>
+<ul>
+	<li><h4>Direct Message your friends</h4></li>
+	<li><h4>Tweet it for the world to see</h4></li>
+	<li><h4>Or Share <a href="/events/<%= scoped_event_id %>/attendees/new">THIS link</a></h4></li>
+</ul>

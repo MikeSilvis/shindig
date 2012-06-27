@@ -20,6 +20,7 @@ class App.CurrentUser extends Spine.Controller
     "#menus"       : "menusEl"
     "#restaurant"  : "restaurantEl"
     "#attendees"   : "attendeesEl"
+    "#share"       : "shareEl"
 
   constructor: ->
     super
@@ -34,4 +35,5 @@ class App.CurrentUser extends Spine.Controller
     @menus              = new App.Menus({ el: @menusEl })
     @restaurants        = new App.Restaurants({ el: @restaurantEl })
     @attendees          = new App.Attendees({ el: @attendeesEl })
+    @share              = new App.Share({ el: @shareEl })
 
