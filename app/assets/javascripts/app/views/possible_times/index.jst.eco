@@ -1,4 +1,51 @@
-<div id="calendar"></div>
+<div class="span6">
+  <h2>What time works best for you?</h2>
+  <form id="new_possible_time">
+    <table>
+      <tr style="height:10px;">
+        <td>
+          <input type="text" id="add_date" class='input-full' value="<%= @date %>">
+        </td>
+        <td>
+          <input type="text" placeholder="Start Time..." id="add_time_start" class='input-full'>
+        </td>
+        <td>
+          <input type="text" placeholder="End Time..." id="add_time_end" class='input-full'>
+        </td>
+        <td>
+          <button class="btn btn-info btn-small addTime" style='margin-bottom:15px;'>+</button>
+        </td>
+      </tr>
+    </table>
+  </form>
+  <br>
+  <% for possible_time in @possible_times: %>
+    <h3>
+      <div class="row" style="padding-bottom:20px;">
+        <div class="span8">
+            <%= possible_time.date %>:
+            <%= possible_time.time_start_hours %> - <%=  possible_time.time_end_hours %>
+        </div>
+        <div class="span3">
+          <% if possible_time.available == false: %>
+            <a class="btn btn-info btn-small yes" id="<%= possible_time.id %>">YES!</a>
+          <% else: %>
+            <a class="btn btn-success disabled btn-small no" id="<%= possible_time.id %>">&#10004;</a>
+          <% end %>
+        </div>
+      </div>
+    </h3>
+  <% end %>
+  <% if current_user.google == false: %>
+    <hr>
+    <h4>Feeling Lazy? Import your Google Calendar.</h4>
+    <img alt="Calendar" src="/assets/calendar.png">
+  <% end %>
+</div>
+<div class="span5 pull-right">
+  <div id="calendar"></div>
+</div>
+
 
 <div class="modal hide" id="timeModal">
   <div id="timeModalContent">

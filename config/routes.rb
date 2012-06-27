@@ -6,9 +6,15 @@ Shindig::Application.routes.draw do
 
   resources :events do
     resources :menus
-    resources :attendees
+    resources :attendees do
+      collection do
+        get "current_attendee"
+      end
+    end
     resources :messages
     resources :possible_times
+    resources :users
+    resources :possible_attendees
   end
 
   resources :users

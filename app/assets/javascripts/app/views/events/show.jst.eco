@@ -1,6 +1,7 @@
 <div class="span6">
   <h1><%= @name %></h1>
   <h3><%= @description %></h3>
+  <a data-toggle="modal" href="#mapModal"><%= @street %>, <%= @zipcode %></a>
 </div>
 
 <div class="span4 pull-right">
@@ -10,5 +11,20 @@
   <div class="span6">
     <h3><%= @user.name %></h3>
     <h3>@<%= @user.username %></h3>
+  </div>
+</div>
+
+
+
+<div class="modal hide" id="mapModal">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">×</button>
+    <h2>Location</h2>
+  </div>
+  <div class="modal-body" style="height:300px;">
+    <div id="map_holder"></div>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn" data-dismiss="modal">Close</a>
   </div>
 </div>

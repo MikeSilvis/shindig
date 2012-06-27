@@ -1,5 +1,11 @@
 <tr>
   <td><h3><%= @name %></h3></td>
   <td style="line-height:23px;"><%= @liked %></td>
-  <td><a class="btn btn-info btn-small plusOne" id="<%= @id %>">+1</a></td>
+  <td>
+    <% if current_attendee.menu_id == @id: %>
+      <a class="btn btn-success btn-small disabled" id="<%= @id %>">&#10004;</a>
+    <% else: %>
+      <a class="btn btn-info btn-small plusOne" id="<%= @id %>">YES!</a>
+    <% end %>
+  </td>
 </tr>

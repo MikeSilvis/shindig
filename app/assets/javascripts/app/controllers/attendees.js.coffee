@@ -1,5 +1,14 @@
 Attendee = App.Attendee
 
+class App.CurrentAttendee extends Spine.Controller
+  constructor: ->
+    super
+    Attendee.bind "refresh", @render
+    Attendee.fetch({id: "current_attendee"})
+
+  render: =>
+    window.current_attendee = Attendee.first()
+
 class App.Attendees extends Spine.Controller
 
   events:
@@ -25,7 +34,6 @@ class App.Attendees extends Spine.Controller
     $('#attendeeModal').modal('show')
     $("#attendeeModalContent").html("")
     $("#attendeeModalContent").append(@view("attendees/modal")(attendees: @attendees))
-
 
 class App.AttendeeItem extends Spine.Controller
 

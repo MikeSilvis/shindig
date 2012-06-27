@@ -8,7 +8,7 @@ class EventsController < ApplicationController
   end
 
   def show
-    # @map = Event.all.to_gmaps4rails
+    # @current_attendee = current_user.attendees.where(event_id: @event.id).pluck(:id).first
   end
 
   def create

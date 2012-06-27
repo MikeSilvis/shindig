@@ -1,6 +1,6 @@
 class GoogleCalendar
   attr_accessor :client, :token, :possible_time, :user
-  CALENDAR_URL = '/calendar/v3/freeBusy?fields=calendars&key=15981128324.apps.googleusercontent.com'
+  CALENDAR_URL = "/calendar/v3/freeBusy?fields=calendars&key=#{GOOGLE_KEY}"
 
   def initialize(user, possible_time)
     get_new_token(user)
@@ -26,9 +26,12 @@ class GoogleCalendar
 
   def save_availability
     if get_availability["calendars"]["#{user.email}"]["busy"].size == 0
-      user.possible_attendees.create(possible_time_id: possible_time.id)
+      user.possible_attendees.create(event_id: possible_time.event_id, 
+                                     possible_time_id: possible_time.id, 
+                                     permanent: false)
     else
-      user.possible_attendees.where(possible_time_id: possible_time.id).destroy_all
+      user.possible_attendees.where(possible_time_id: possible_time.id, 
+                                    permanent: false).destroy_all
     end
   end
 

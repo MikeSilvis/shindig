@@ -3,7 +3,7 @@ Menu = App.Menu
 class App.Menus extends Spine.Controller
 
   events:
-    "click": "plusOne"
+    "click .plusOne": "plusOne"
 
   elements:
     ".menu_container" : "menu_container"
@@ -19,6 +19,7 @@ class App.Menus extends Spine.Controller
       new App.MenuItem({ el: @menu_container, menu: menu})
 
   plusOne: (e) =>
+    $(".menu_container").fadeOut()
     App.Menu.find(e.target.id).incrementLikes()
 
 class App.MenuItem extends Spine.Controller

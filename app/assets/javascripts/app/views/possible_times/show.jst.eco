@@ -1,13 +1,13 @@
 <div class="modal-header">
   <button type="button" class="close" data-dismiss="modal">×</button>
-  <h3><%= @date %>: <%= @time_start %> - <%= @time_end %></h3>
+  <h3><%= @date %>: <%= @time_start_hours %> - <%= @time_end_hours %></h3>
 </div>
 <div class="modal-body">
   Total Possible Attendees: <%= @total_attendees %>
   <hr>
   <div class="row">
     <% for user in @possible_attendees: %>
-      <div class="span4" style='margin-bottom:15px;'>
+      <div class="span5" style='margin-bottom:15px;'>
         <div class="span3 no_margin">
           <img src="<%= user.avatar%>" class='avatar'>
         </div>
@@ -19,6 +19,6 @@
     <% end %>
   </div>
   <p style='font-size: .7em;'>
-    * Note: Participants are based solely on availability of their personal Google Calendar Schedule
+    * Note: Participants may be based on availability of their personal Google Calendar Schedule
   </p>
 </div>

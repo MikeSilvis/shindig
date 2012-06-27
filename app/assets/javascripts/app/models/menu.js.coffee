@@ -5,5 +5,4 @@ class App.Menu extends Spine.Model
   @url: => "/events/#{scoped_event_id}/menus/"
 
   incrementLikes: =>
-    this.liked = this.liked + 1
-    this.save()
+    current_attendee.updateMenuLikes(this.id)

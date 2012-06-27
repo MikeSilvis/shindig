@@ -1,1 +1,2 @@
-<input type="text" placeholder="Add Restaurant..." id="add_restaurant">
+<h2>But where do you like to eat?</h2>
+<input type="text" placeholder="Add Restaurant..." id="add_restaurant" class='input-full'>

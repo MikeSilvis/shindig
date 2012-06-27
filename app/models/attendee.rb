@@ -1,7 +1,8 @@
 class Attendee < ActiveRecord::Base
-  attr_accessible :event_id, :user_id
+  attr_accessible :event_id, :user_id, :menu_id
   belongs_to :event
   belongs_to :user
+  belongs_to :menu
   after_create :find_availability
 
   def self.add_event(token)

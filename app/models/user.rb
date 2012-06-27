@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   has_many :possible_attendees
   has_many :messages
   attr_accessible :email, :password, :remember_me, :name, :username, :avatar
-
+  attr_accessor :attendee
   validates_presence_of :username
   validates_uniqueness_of :username
 
@@ -30,5 +30,17 @@ class User < ActiveRecord::Base
     save
   end
 
-end
+  def imported_google?
+    google != nil
+  end
 
+  def current_attendee(event_id)
+    self.attendee = attendees.find_by_event_id(event_id)
+  end
+
+  def self.find_user_and_event_relations(user_id, event_id)
+    user = User.find(user_id)
+    user.current_attendee(event_id)
+    user
+  end
+end

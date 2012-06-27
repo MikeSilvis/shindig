@@ -5,6 +5,8 @@ html
     = javascript_include_tag "application", "http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0"
     = pusher_meta_tags
     = csrf_meta_tags
+    - if current_user
+      meta content="#{current_user.id}" name="user_token"
     title Shindig
 
   head

@@ -1,24 +1,37 @@
+/ #app
+/   .row
+/     .well
+/       #event
+/   .row
+/     .span4.no_margin
+/       .well
+/         #map
+/       .well
+/         h2 Liked Restaraunts
+/         #restaurant
+/         #menus
+/     .span7.pull-right
+/       .well
+/         #attendees
+/       .well
+/         ul.nav.nav-tabs
+/           li class="active"
+/             a(data-toggle="tab" href="#times") Possible Shindig Times
+/           li
+/             a data-toggle="tab" href="#messages" Messages
+/         .tab-content
+/           #times.tab-pane.active
+/           #messages.tab-pane
+
 #app
+  #current_attendee(attendee-id="#{@current_attendee}")
   .row
     .well
       #event
   .row
-    .span4.no_margin
-      .well
-        #map
-      .well
-        h2 Liked Restaraunts
-        #restaurant
-        #menus
-    .span7.pull-right
-      .well
-        #attendees
-      .well
-        ul.nav.nav-tabs
-          li class="active"
-            a(data-toggle="tab" href="#times") Possible Shindig Times
-          li
-            a data-toggle="tab" href="#messages" Messages
-        .tab-content
-          #times.tab-pane.active
-          #messages.tab-pane
+    .well
+      #times
+  .row
+    .well
+      #restaurant
+      #menus

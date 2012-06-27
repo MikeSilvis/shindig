@@ -14,22 +14,12 @@
 
 class App extends Spine.Controller
 
-  elements:
-    "#event"       : "eventEl"
-    "#times"       : "possibleTimesEl"
-    "#messages"    : "messagesEl"
-    "#menus"       : "menusEl"
-    "#restaurant"  : "restaurantEl"
-    "#attendees"   : "attendeesEl"
+  # Everything is scoped to the current_user model
 
   constructor: ->
     super
-    @events         = new App.Events({ el: @eventEl })
-    @possibleTime   = new App.PossibleTimes({ el: @possibleTimesEl })
-    @messages       = new App.Messages({ el: @messagesEl })
-    @menus          = new App.Menus({ el: @menusEl })
-    @restaurants    = new App.Restaurants({ el: @restaurantEl })
-    @attendees      = new App.Attendees({ el: @attendeesEl })
+    @current_user = new App.CurrentUser({ el: @el})
+    @current_attendee = new App.CurrentAttendee({el: @el})
 
     # Spine.Route.setup()
 

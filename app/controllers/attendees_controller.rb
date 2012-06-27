@@ -2,7 +2,7 @@ class AttendeesController < ApplicationController
   before_filter :require_login
 
   def index
-    @attendees = Attendee.where(event_id: params[:event_id]).all()
+    @attendees = Attendee.where(event_id: params[:event_id]).includes(:user).all()
   end
 
   def new
@@ -13,6 +13,16 @@ class AttendeesController < ApplicationController
 
   def show
     @attendee = Attendee.find(params[:id])
+  end
+
+  def update
+    @attendee = Attendee.find(params[:id])
+    @attendee.update_attributes(params[:attendee])
+    @attendee
+  end
+
+  def current_attendee
+    @current_attendee = current_user.attendees.where(event_id: params[:event_id])
   end
 
 end

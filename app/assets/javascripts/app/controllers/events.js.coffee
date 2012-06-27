@@ -22,8 +22,5 @@ class Map extends Spine.Controller
       zoom: 15
     )
     pushpin = new Microsoft.Maps.Pushpin(map.getCenter(), null)
-    # pushpinClick = Microsoft.Maps.Events.addHandler(pushpin, 'click', @zap)
     map.entities.push pushpin
     pushpin.setLocation new Microsoft.Maps.Location(lat, long)
-
-  # zap: =>
