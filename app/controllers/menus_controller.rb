@@ -23,4 +23,17 @@ class MenusController < ApplicationController
     @menu
   end
 
+  def destroy
+    @menu = Menu.find(params[:id])
+    @menu.destroy
+    head :no_content
+  end
+
+private
+
+  def require_admin
+    @event = Event.find(params[:event_id])
+    @event.is_owner?(current_user)
+  end
+
 end

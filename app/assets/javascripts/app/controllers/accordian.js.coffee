@@ -8,6 +8,8 @@ class App.Accordian extends Spine.Controller
 
 	hideAllTheThings: =>
 		$(".accordianable").hide()
+		# $("#food").show()
+		# $("#food_pointer").addClass("active")
 		$("#times").show()
 		$("#times_pointer").addClass("active")
 

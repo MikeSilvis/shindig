@@ -3,7 +3,8 @@ Menu = App.Menu
 class App.Menus extends Spine.Controller
 
   events:
-    "click .plusOne": "plusOne"
+    "click .plusOne"     : "plusOne"
+    "click .remove_menu" : "removeMenu"
 
   elements:
     ".menu_container" : "menu_container"
@@ -21,6 +22,10 @@ class App.Menus extends Spine.Controller
   plusOne: (e) =>
     $(".menu_container").fadeOut()
     App.Menu.find(e.target.id).incrementLikes()
+
+  removeMenu: (e) =>
+    e.preventDefault()
+    App.Menu.find(e.target.id).destroy()
 
 class App.MenuItem extends Spine.Controller
 

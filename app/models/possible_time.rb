@@ -17,12 +17,12 @@ class PossibleTime < ActiveRecord::Base
      Resque.enqueue(PullAvailabilityTime, self.id)
   end
 
-  def time_start_formatted()
-    time_start.localtime.strftime("%I:%M %p")
+  def time_start_formatted
+    time_start.localtime.strftime("%I:%M%P")
   end
 
-  def time_end_formatted()
-    time_end.localtime.strftime("%I:%M %p")
+  def time_end_formatted
+    time_end.localtime.strftime("%I:%M%P")
   end
 
   def user_is_available?(user_id)

@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   has_many :possible_attendees
   has_many :messages
   attr_accessible :email, :password, :remember_me, :name, :username, :avatar
-  attr_accessor :attendee
+  attr_accessor :attendee, :owner
   validates_presence_of :username
   validates_uniqueness_of :username
 
@@ -36,6 +36,7 @@ class User < ActiveRecord::Base
 
   def current_attendee(event_id)
     self.attendee = attendees.find_by_event_id(event_id)
+    self.owner = Event.find(event_id).is_owner?(self)
   end
 
   def self.find_user_and_event_relations(user_id, event_id)

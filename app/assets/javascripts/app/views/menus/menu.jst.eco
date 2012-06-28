@@ -1,7 +1,7 @@
 <tr>
   <td>
   	<h3>
-  		<a href="https://livingsocial.com/menus/locations/<%= @restaraunt.ls_id %>/order/edit" target="_blank"><%= @name %></a>
+  		<a href="https://livingsocial.com/menus/locations/<%= @restaraunt.ls_id if @restaraunt %>/order/edit" target="_blank"><%= @name %></a>
   	</h3>
   </td>
   <td style="line-height:23px;"><%= @liked %></td>
@@ -10,6 +10,11 @@
       <a class="btn btn-success btn-small disabled" id="<%= @id %>">&#10004;</a>
     <% else: %>
       <a class="btn btn-info btn-small plusOne" id="<%= @id %>">YES!</a>
+    <% end %>
+  </td>
+  <td>
+    <% if current_user.owner == true: %>
+      <a class="btn btn-warning remove_menu" id="<%= @id %>">X</a>
     <% end %>
   </td>
 </tr>

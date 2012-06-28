@@ -50,6 +50,9 @@
   <div id="timeModalContent">
   </div>
   <div class="modal-footer">
+    <% if current_user.owner == true: %>
+      <a class="btn btn-warning btn-small pull-left remove_time">Remove Time</a>
+    <% end %>
     <a href="#" class="btn" data-dismiss="modal">Close</a>
   </div>
 </div>

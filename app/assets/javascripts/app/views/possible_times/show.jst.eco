@@ -18,7 +18,7 @@
       </div>
     <% end %>
   </div>
-  <p style='font-size: .7em;'>
+  <p class='row span11' style='font-size: .7em;'>
     * Note: Participants may be based on availability of their personal Google Calendar Schedule
   </p>
 </div>

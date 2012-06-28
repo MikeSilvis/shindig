@@ -4,6 +4,7 @@ class App.PossibleTimes extends Spine.Controller
 
   events:
     "click .yes"                : "addAvailabilityForAttendee"
+    "click .remove_time"        : "removePossibleTime"
     'submit #new_possible_time' : "addPossibleTime"
 
   constructor: ->
@@ -29,6 +30,11 @@ class App.PossibleTimes extends Spine.Controller
     e.preventDefault()
     App.PossibleTime.formatAndSubmit($("#add_date").val(), $("#add_time_start").val(), $("#add_time_end").val())
 
+  removePossibleTime: (e) =>
+    e.preventDefault()
+    $('#timeModal').modal('hide')
+    App.PossibleTime.find($(".remove_time").attr("id")).destroy()
+
 class App.TimeItem extends Spine.Controller
 
     constructor: ->
@@ -39,6 +45,7 @@ class App.TimeItem extends Spine.Controller
       @time = PossibleTime.find(this.id)
       $('#timeModal').modal('show')
       $("#timeModalContent").html("")
+      $(".remove_time").attr('id', @time.id)
       $("#timeModalContent").append(@view("possible_times/show")(@time))
 
 class CalendarMethods
