@@ -15,6 +15,6 @@ class App.Shares extends Spine.Controller
 		$("#add_tweet").typeahead({
       source: tweeps,
     })
-    $("#share_link").focus ->
-    	console.log $(this).select
+    $("#share_link").click ->
+    	$(this).select()
     $("#add_tweet").limit "110", "#chars_left"
