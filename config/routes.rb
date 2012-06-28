@@ -28,5 +28,4 @@ Shindig::Application.routes.draw do
   end
 
   root :to => "home#index"
-  get '/sign_in', :to => 'users/sessions#new', :as => :new_session
 end
