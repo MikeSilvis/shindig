@@ -7,6 +7,7 @@ class TweetsController < ApplicationController
 
 	def create
 		Share.tweet(current_user, params[:content], params[:event_id])
+		render json: "submitted"
 	end
 
 end

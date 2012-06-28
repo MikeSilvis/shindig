@@ -1,10 +1,13 @@
-<form id="send_tweet">
+<form id="send_tweet" method='get'>
+	<div class="alert alert-success" id="tweet_success" style='display:none;'>
+		Tweet Sent!
+	</div>
 	<input type="text" placeholder="Tweet... (will include a link to this shindig)" id="add_tweet" class='input-full' max-length="110">
 	<br>
 	<div class='span3 pull-right' style='margin-right:-17px;'>
 		<span id="chars_left"></span> characters left
 	</div>
-	<button class="btn btn-info btn-medium">Tweet!</button>
+	<button class="btn btn-info btn-medium" id='tweet_me'>Tweet!</button>
 </form>
 <h3>
 	Or Share via <a href="http://shindigwith.me/events/<%= event_token %>/attendees/new">this link</a>

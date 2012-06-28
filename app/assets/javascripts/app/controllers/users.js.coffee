@@ -35,5 +35,5 @@ class App.CurrentUser extends Spine.Controller
     @restaurants        = new App.Restaurants({ el: @restaurantEl })
     @menus              = new App.Menus({ el: @menusEl })
     @messages           = new App.Messages({ el: @messagesEl })
-    @share              = new App.Share({ el: @shareEl })
+    @share              = new App.Shares({ el: @shareEl })
 
