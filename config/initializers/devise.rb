@@ -208,7 +208,7 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', :scope => 'user,public_repo'
 
-  config.omniauth :twitter, "2yBLkeHyddvYDCkLNvZXQ", "sbevPXWzNwyrrKOob4poYGlPFGocNYHk7U75QjFcm4"
+  config.omniauth :twitter, TWITTER_KEY, TWITTER_SECRET
   config.omniauth :google_oauth2, GOOGLE_KEY, GOOGLE_SECRET, :name => 'google', :scope => 'userinfo.email,userinfo.profile,calendar,calendar.readonly'
 
   # ==> Warden configuration
