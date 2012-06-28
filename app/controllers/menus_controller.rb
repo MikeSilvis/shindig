@@ -2,7 +2,7 @@ class MenusController < ApplicationController
   before_filter :require_login
 
   def index
-    @menus = Menu.where(event_id: params[:event_id]).order("liked DESC")
+    @menus = Menu.where(event_id: params[:event_id])
   end
 
   def create

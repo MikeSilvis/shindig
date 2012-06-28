@@ -10,5 +10,6 @@
 	<button class="btn btn-info btn-medium" id='tweet_me'>Tweet!</button>
 </form>
 <h3>
-	Or Share via <a href="http://shindigwith.me/events/<%= event_token %>/attendees/new">this link</a>
+	Or Share this link
+	<input type='text' id='share_link' value="http://shindigwith.me/events/<%= event_token %>/attendees/new">
 </h3>

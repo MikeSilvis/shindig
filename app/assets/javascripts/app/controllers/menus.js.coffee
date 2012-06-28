@@ -16,7 +16,7 @@ class App.Menus extends Spine.Controller
 
   render: =>
     @html @view("menus/index")
-    for menu in Menu.all().sort().reverse()
+    for menu in Menu.all()
       new App.MenuItem({ el: @menu_container, menu: menu})
 
   plusOne: (e) =>
