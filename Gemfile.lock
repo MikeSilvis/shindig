@@ -80,6 +80,9 @@ GEM
       guard (>= 1.1)
     hashie (1.2.0)
     hike (1.2.1)
+    httparty (0.8.3)
+      multi_json (~> 1.0)
+      multi_xml
     httpauth (0.1)
     i18n (0.6.0)
     jbuilder (0.4.0)
@@ -90,6 +93,8 @@ GEM
       railties (>= 3.2.0, < 5.0)
       thor (~> 0.14)
     json (1.7.3)
+    launchy (2.1.0)
+      addressable (~> 2.2.6)
     listen (0.4.6)
       rb-fchange (~> 0.0.5)
       rb-fsevent (~> 0.9.1)
@@ -100,6 +105,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.18)
     multi_json (1.3.6)
+    multi_xml (0.5.1)
     multipart-post (1.1.5)
     newrelic_rpm (3.3.2)
     nokogiri (1.5.2)
@@ -124,6 +130,8 @@ GEM
       omniauth-oauth (~> 1.0)
     orm_adapter (0.1.0)
     pg (0.13.2)
+    polyamorous (0.5.0)
+      activerecord (~> 3.0)
     polyglot (0.3.3)
     pusher (0.9.4)
       multi_json (~> 1.0)
@@ -192,6 +200,9 @@ GEM
       ffi (~> 1.0)
       multi_json (~> 1.0)
       rubyzip
+    shortly (0.3.3)
+      httparty
+      json
     signature (0.1.3)
     simple_form (2.0.1)
       actionpack (~> 3.0)
@@ -215,6 +226,10 @@ GEM
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
     sqlite3 (1.3.6)
+    squeel (1.0.6)
+      activerecord (~> 3.0)
+      activesupport (~> 3.0)
+      polyamorous (~> 0.5.0)
     temple (0.4.0)
     thor (0.14.6)
     tilt (1.3.3)
@@ -254,20 +269,24 @@ DEPENDENCIES
   guard-rspec
   jbuilder
   jquery-rails
+  launchy
   newrelic_rpm
   omniauth
   omniauth-google-oauth2
   omniauth-twitter
   pg
   pusher
+  rack-test
   rails (= 3.2.3)
   resque
   rspec-rails
   sass-rails (~> 3.2.3)
+  shortly
   simple_form
   simplecov
   slim
   spine-rails
   sqlite3
+  squeel
   twitter
   uglifier (>= 1.0.3)

@@ -1,43 +1,52 @@
-/ #app
-/   .row
-/     .well
-/       #event
-/   .row
-/     .span4.no_margin
-/       .well
-/         #map
-/       .well
-/         h2 Liked Restaraunts
-/         #restaurant
-/         #menus
-/     .span7.pull-right
-/       .well
-/         #attendees
-/       .well
-/         ul.nav.nav-tabs
-/           li class="active"
-/             a(data-toggle="tab" href="#times") Possible Shindig Times
-/           li
-/             a data-toggle="tab" href="#messages" Messages
-/         .tab-content
-/           #times.tab-pane.active
-/           #messages.tab-pane
-
 #app
   #current_attendee(attendee-id="#{@current_attendee}")
   .row
-    .well
-      #event
-  .row
-    .well
-      #times
-  .row
-    .well
-      #restaurant
-      #menus
-  .row
-    .well
-      #messages
-  .row
-    .well
-      #share
+    .row
+      .well
+        #event
+    .span9.no_margin
+      .row
+        .well#times_pointer
+          .row.subject
+            .span1
+              .numberCircle 1
+            .span6.subject_heading
+              h2 What times work for you?
+            .span1.pull-right.subject_heading
+              = image_tag "glyphicons/glyphicons_045_calendar.png", class: "subject_icon"
+          #times.accordianable
+      .row
+        .well#food_pointer
+          .row.subject
+            .span1
+              .numberCircle 2
+            .span6.subject_heading
+              h2 And where do you like to eat?
+            .span1.pull-right.subject_heading
+              = image_tag "glyphicons/glyphicons_275_fast_food.png", class: "subject_icon"
+          #food.accordianable
+            #restaurant
+            #menus
+      .row
+        .well#messages_pointer
+          .row.subject
+            .span1
+              .numberCircle 3
+            .span6.subject_heading
+              h2 But what is this really about?
+            .span1.pull-right.subject_heading
+              = image_tag "glyphicons/glyphicons_309_comments.png", class: "subject_icon"
+          #messages.accordianable
+      .row
+        .well#share_pointer
+          .row.subject
+            .span1
+              .numberCircle 4
+            .span6.subject_heading
+              h2 Invite your homeboys!
+            .span1.pull-right.subject_heading
+              = image_tag "glyphicons/glyphicons_392_twitter.png", class: "subject_icon"
+          #share.accordianable
+    .span2.pull-right(style="width:180px;")
+      .well
+        #attendees

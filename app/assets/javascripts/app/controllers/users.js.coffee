@@ -25,15 +25,15 @@ class App.CurrentUser extends Spine.Controller
   constructor: ->
     super
     User.bind 'refresh', @render
-    App.User.fetch({id: $("meta[name=user_token]").attr('content')})
+    App.User.fetch({id: "current"})
 
   render: =>
     window.current_user = User.first()
     @events             = new App.Events({ el: @eventEl })
-    @possibleTime       = new App.PossibleTimes({ el: @possibleTimesEl })
-    @messages           = new App.Messages({ el: @messagesEl })
-    @menus              = new App.Menus({ el: @menusEl })
-    @restaurants        = new App.Restaurants({ el: @restaurantEl })
     @attendees          = new App.Attendees({ el: @attendeesEl })
+    @possibleTime       = new App.PossibleTimes({ el: @possibleTimesEl })
+    @restaurants        = new App.Restaurants({ el: @restaurantEl })
+    @menus              = new App.Menus({ el: @menusEl })
+    @messages           = new App.Messages({ el: @messagesEl })
     @share              = new App.Share({ el: @shareEl })
 

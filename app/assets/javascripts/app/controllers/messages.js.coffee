@@ -18,6 +18,7 @@ class App.Messages extends Spine.Controller
   createMessage: (e) ->
     e.preventDefault()
     App.Message.create content: $("#content").val()
+    App.Message.fetch()
     e.target.reset()
 
 class App.MessageItem extends Spine.Controller

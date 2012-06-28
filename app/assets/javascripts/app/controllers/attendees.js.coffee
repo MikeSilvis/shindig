@@ -4,7 +4,7 @@ class App.CurrentAttendee extends Spine.Controller
   constructor: ->
     super
     Attendee.bind "refresh", @render
-    Attendee.fetch({id: "current_attendee"})
+    Attendee.fetch({id: "current"})
 
   render: =>
     window.current_attendee = Attendee.first()
@@ -22,7 +22,7 @@ class App.Attendees extends Spine.Controller
   render: =>
     @attendees = Attendee.all()
     @html @view('attendees/index')(attendee_count: @attendees.length)
-    for attendee in Attendee.all()[0..2]
+    for attendee in Attendee.all()[0..20]
       new App.AttendeeItem(attendee)
 
   createMessage: (e) ->

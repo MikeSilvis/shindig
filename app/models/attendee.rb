@@ -14,4 +14,8 @@ class Attendee < ActiveRecord::Base
     Resque.enqueue(PullAvailabilityAttendee, self.id)
   end
 
+  def self.find_attendees_except_self(event_id_param, user_id_param)
+    Attendee.where{(event_id.eq event_id_param) & (user_id.not_eq user_id_param)}
+  end
+
 end

@@ -19,7 +19,8 @@ gem 'pusher'
 gem 'eco'
 gem 'geocoder'
 gem 'gmaps4rails'
-
+gem 'squeel'
+gem 'shortly'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
@@ -29,10 +30,12 @@ end
 group :development, :test do
  gem 'rspec-rails'
  gem 'simplecov'
+ gem 'rack-test'
  gem 'guard'
  gem 'guard-rspec'
  gem 'growl'
  gem 'capybara'
+ gem 'launchy'
  gem 'factory_girl'
  gem 'sqlite3'
  gem 'newrelic_rpm'

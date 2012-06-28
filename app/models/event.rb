@@ -6,25 +6,30 @@ class Event < ActiveRecord::Base
   has_many :messages
   has_many :menus
   has_many :possible_times
-  before_create :generate_token
+  before_create :generate_token, :generate_google_url
   after_create :add_owner_to_party
   after_create :geocode_data
-  acts_as_gmappable
 
   def self.find_from_token(token)
     Event.where(token: token).first
   end
 
-  def gmaps4rails_address
-     "#{self.street}, #{self.zipcode}"
-  end
-
   def geocode_data
-
+    result = Geocoder.search("#{self.street}, #{self.zipcode}").first
+    if result
+      self.latitude   = result.latitude
+      self.longitude  = result.longitude
+    end
   end
 
   def generate_token
     self.token = Digest::SHA1.hexdigest(self.name + self.description + rand(10000).to_s)
+  end
+
+  def generate_google_url
+    googl = Shortly::Clients::Googl
+    shorten_url = "http://shindigwith.me/events/#{token}/attendees/new"
+    self.google_url = googl.shorten(shorten_url).shortUrl
   end
 
   def add_owner_to_party

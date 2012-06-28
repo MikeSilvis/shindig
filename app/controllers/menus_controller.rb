@@ -1,4 +1,5 @@
 class MenusController < ApplicationController
+  before_filter :require_login
 
   def index
     @menus = Menu.where(event_id: params[:event_id]).order("liked DESC")
@@ -9,6 +10,7 @@ class MenusController < ApplicationController
                         event_id: params[:event_id],
                         name: params[:menu][:name])
     @menu
+    render status: :created
   end
 
   def show
@@ -20,4 +22,5 @@ class MenusController < ApplicationController
     @menu.update_attributes(params[:menu])
     @menu
   end
+
 end

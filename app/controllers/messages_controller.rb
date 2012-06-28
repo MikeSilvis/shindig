@@ -14,6 +14,7 @@ class MessagesController < ApplicationController
                                             event_id: params[:event_id])
 
     @message
+    render status: :created
   end
 
 end

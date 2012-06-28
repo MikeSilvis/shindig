@@ -1,8 +1,10 @@
-<div class="span3" style='margin-bottom:15px;'>
-  <div class="span3 no_margin">
-    <img src="<%= @user.avatar%>" class='avatar'>
-  </div>
-  <div class="span7" style='word-wrap:break-word'>
-    <h4><%= @user.name %></h4>
-  </div>
+<div class='row'>
+	<div style='float:left; margin-bottom:15px;'>
+	  <div class="span2">
+	    <img src="<%= @user.avatar%>" class='avatar'>
+	  </div>
+	  <div class="span7" style='word-wrap:break-word'>
+	    <h4><%= @user.name %></h4>
+	  </div>
+	</div>
 </div>

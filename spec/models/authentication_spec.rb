@@ -53,4 +53,9 @@ describe Authentication do
       twitter3.user.twitter_token.should == "314378901-qUB9nOV0ejMk2kiw5ohUzadv2sE6zChISxjxAxKZ"
     end
   end
+  describe 'returns secret' do
+    it "can return twitter secret" do
+      twitter3.user.twitter_secret.should == "pZIHwDPidVF09TJcPkQaaIfVPUppj3JYyUr8dQFTsM"
+    end
+  end
 end

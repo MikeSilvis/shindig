@@ -11,3 +11,5 @@ json.latitude @event.latitude
 json.longitude @event.longitude
 json.user @event.user, :name, :username, :avatar, :email
 json.user_id @event.user_id
+json.url_invite @event.google_url
+json.token @event.token

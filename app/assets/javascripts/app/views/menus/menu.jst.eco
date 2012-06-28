@@ -1,5 +1,9 @@
 <tr>
-  <td><h3><%= @name %></h3></td>
+  <td>
+  	<h3>
+  		<a href="https://livingsocial.com/menus/locations/<%= @restaraunt.ls_id %>/order/edit" target="_blank"><%= @name %></a>
+  	</h3>
+  </td>
   <td style="line-height:23px;"><%= @liked %></td>
   <td>
     <% if current_attendee.menu_id == @id: %>

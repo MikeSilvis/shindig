@@ -2,13 +2,14 @@ class AttendeesController < ApplicationController
   before_filter :require_login
 
   def index
-    @attendees = Attendee.where(event_id: params[:event_id]).includes(:user).all()
+    @attendees = Attendee.find_attendees_except_self(params[:event_id],
+                                                     current_user.id)
   end
 
   def new
-    event = Event.find(params[:event_id])
+    event = Event.find_by_token(params[:event_id])
     event.join_event(current_user.id)
-    redirect_to event_path(params[:event_id]), notice: "Congrats on attending"
+    redirect_to event_path(params[:event_id]), notice: "Radical dude, this shindig is going to rock now that you're coming!"
   end
 
   def show
@@ -21,8 +22,9 @@ class AttendeesController < ApplicationController
     @attendee
   end
 
-  def current_attendee
-    @current_attendee = current_user.attendees.where(event_id: params[:event_id])
+  def current
+    @attendee = current_user.attendees.where(event_id: params[:event_id])
+    render "attendees/show"
   end
 
 end

@@ -1,13 +1,12 @@
 <h3> Total Attendees:
   <%= @attendee_count %>
 </h3>
+<% if @attendee_count > 20: %>
+  <a href="#">See More...</a>
+<% end %>
+<br>
 <br>
 <div id="attendee_container"></div>
-<div class='row span12'>
-  <% if @attendee_count > 3: %>
-    <a href="#">See More...</a>
-  <% end %>
-</div>
 
 <div class="modal hide" id="attendeeModal">
   <div id="attendeeModalContent">

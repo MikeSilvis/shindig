@@ -11,4 +11,5 @@ class PossibleTimesController < ApplicationController
   def create
     @possible_time = PossibleTime.create_from_spine(params[:possible_time], params[:event_id])
   end
+
 end

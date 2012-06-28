@@ -1,7 +1,9 @@
 <div class="span6">
   <h1><%= @name %></h1>
+  <a data-toggle="modal" href="#mapModal">
+    <%= @street %>, <%= @zipcode %>
+  </a>
   <h3><%= @description %></h3>
-  <a data-toggle="modal" href="#mapModal"><%= @street %>, <%= @zipcode %></a>
 </div>
 
 <div class="span4 pull-right">

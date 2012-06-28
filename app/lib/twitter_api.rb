@@ -22,7 +22,11 @@ class TwitterApi
   end
 
   def send_dm(username, content)
-    twitter_client.direct_message_create(username, content)
+    @client.direct_message_create(username, content)
+  end
+
+  def tweet(content)
+    @client.update(content)
   end
 
   private

@@ -14,14 +14,11 @@
 
 class App extends Spine.Controller
 
-  # Everything is scoped to the current_user model
-
   constructor: ->
     super
     @current_user = new App.CurrentUser({ el: @el})
     @current_attendee = new App.CurrentAttendee({el: @el})
-
-    # Spine.Route.setup()
+    @accordian = new App.Accordian({el: @el})
 
 window.App = App
 window.scoped_event_id = new ParamsFinder().id()

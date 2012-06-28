@@ -1,8 +1,6 @@
-<h2>But what is this really about? </h2>
 <div id="message_container">
 
 </div>
 <form class="form-inline">
   <input type='text' name='content' placeholder='new message...' class='input-full' id="content">
-  <button type="submit" class="btn">Create</button>
 </form>

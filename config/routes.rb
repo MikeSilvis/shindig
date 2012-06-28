@@ -8,17 +8,19 @@ Shindig::Application.routes.draw do
     resources :menus
     resources :attendees do
       collection do
-        get "current_attendee"
+        get "current"
       end
     end
     resources :messages
     resources :possible_times
-    resources :users
+    resources :users do
+      collection do
+        get 'current'
+      end
+    end
     resources :possible_attendees
+    resources :tweets
   end
-
-  resources :users
-
   resources :restaraunts do
     collection do
       get "search"

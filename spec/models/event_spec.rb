@@ -3,6 +3,7 @@ require 'spec_helper'
 describe Event do
   before(:each) do
   PossibleTime.any_instance.stub(:find_availability).and_return(true)
+  Event.any_instance.stub(:geocode_data).and_return(true)
   end
   let(:user1) { User.create(username: "mike" )}
   let(:event1) { Event.new(name: "Mike's Party", description: "Come Chill wit me") }
@@ -19,7 +20,6 @@ describe Event do
   end
   describe "#find_from_token" do
     it "finds the event" do
-      raise event3.inspect
       Event.find_from_token(event3.token).should be_a(Event)
     end
   end

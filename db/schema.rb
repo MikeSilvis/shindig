@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120627002018) do
+ActiveRecord::Schema.define(:version => 20120628021225) do
 
   create_table "attendees", :force => true do |t|
     t.integer  "user_id"
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(:version => 20120627002018) do
     t.float    "latitude"
     t.float    "longitude"
     t.boolean  "gmaps"
+    t.string   "google_url"
   end
 
   create_table "menus", :force => true do |t|

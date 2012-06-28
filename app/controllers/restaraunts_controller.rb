@@ -1,7 +1,7 @@
 class RestarauntsController < ApplicationController
+  before_filter :require_login
 
   def index
-    # render json: Restaraunt.pluck(:name).map { |name| "\"#{name}\"" }
     render json: Restaraunt.all
   end
 

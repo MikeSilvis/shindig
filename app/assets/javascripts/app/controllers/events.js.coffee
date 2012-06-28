@@ -10,6 +10,7 @@ class App.Events extends Spine.Controller
 
   render: =>
     @event = Event.first()
+    window.event_token = @event.token
     @html @view('events/show')(@event)
     $("#map").append(@view('events/map')(@event))
     new Map(@event.latitude, @event.longitude)
