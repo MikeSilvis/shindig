@@ -1,4 +1,4 @@
-require_relative 'oath_keys'
+require  "#{Rails.root}/config/initializers/oath_keys"
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|

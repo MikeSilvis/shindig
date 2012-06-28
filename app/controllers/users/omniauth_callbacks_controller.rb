@@ -2,9 +2,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   SERVICES.each do |service|
     define_method "#{service}".to_sym do
-      location = redirect_location(session[:redirect_url])
-      current_user ? create_auth(service) : verify_user_and_auth(service)
-      redirect_to location, notice: "#{service.titleize} Registration Successful."
+      # location = redirect_location(session[:redirect_url])
+      # current_user ? create_auth(service) : verify_user_and_auth(service)
+      redirect_to root_path, notice: "Registration successful"
+      # redirect_to location, notice: "#{service.titleize} Registration Successful."
     end
   end
 
