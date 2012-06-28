@@ -2,7 +2,7 @@ class MenusController < ApplicationController
   before_filter :require_login
 
   def index
-    @menus = Menu.where(event_id: params[:event_id])
+    @menus = Menu.where(event_id: params[:event_id]).includes(:restaraunt)
   end
 
   def create
@@ -14,7 +14,7 @@ class MenusController < ApplicationController
   end
 
   def show
-    @menu = Menu.find(params[:id])
+    @menu = Menu.find(params[:id]).includes(:restaraunt)
   end
 
   def update

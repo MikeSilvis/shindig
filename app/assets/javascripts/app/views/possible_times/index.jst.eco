@@ -29,7 +29,7 @@
           <% if possible_time.available == false: %>
             <a class="btn btn-info btn-small yes" id="<%= possible_time.id %>">YES!</a>
           <% else: %>
-            <a class="btn btn-success disabled btn-small no" id="<%= possible_time.id %>">&#10004;</a>
+            <a class="btn btn-success btn-small no" id="<%= possible_time.id %>">&#10004;</a>
           <% end %>
         </div>
       </div>

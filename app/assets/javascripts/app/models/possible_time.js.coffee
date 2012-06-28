@@ -8,6 +8,10 @@ class App.PossibleTime extends Spine.Model
   	App.PossibleAttendee.create possible_time_id: this.id
   	App.PossibleTime.fetch()
 
+  removeTimeForAttendee: =>
+    new App.PossibleAttendee({id: this.current_user_attendee_id}).destroy()
+    App.PossibleTime.fetch()
+
   @formatAndSubmit:(date, time_start, time_end) ->
     # Sorry West Coast...
     time_start  = date + " "  + time_start + " EDT"

@@ -4,6 +4,7 @@ class App.PossibleTimes extends Spine.Controller
 
   events:
     "click .yes"                : "addAvailabilityForAttendee"
+    "click .no"                 : "removeAvailabilityForAttendee"
     "click .remove_time"        : "removePossibleTime"
     'submit #new_possible_time' : "addPossibleTime"
 
@@ -26,6 +27,10 @@ class App.PossibleTimes extends Spine.Controller
   addAvailabilityForAttendee: (e) =>
     App.PossibleTime.find(e.target.id).confirmTimeForAttendee()
 
+  removeAvailabilityForAttendee: (e) =>
+    e.preventDefault()
+    App.PossibleTime.find(e.target.id).removeTimeForAttendee()
+
   addPossibleTime: (e) =>
     e.preventDefault()
     App.PossibleTime.formatAndSubmit($("#add_date").val(), $("#add_time_start").val(), $("#add_time_end").val())
@@ -34,6 +39,7 @@ class App.PossibleTimes extends Spine.Controller
     e.preventDefault()
     $('#timeModal').modal('hide')
     App.PossibleTime.find($(".remove_time").attr("id")).destroy()
+
 
 class App.TimeItem extends Spine.Controller
 

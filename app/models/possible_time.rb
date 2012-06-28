@@ -9,6 +9,15 @@ class PossibleTime < ActiveRecord::Base
     PossibleTime.find_all_by_event_id(event_id)
   end
 
+  def visible_attendees
+    possible_attendees.where(visible: true)
+  end
+
+  def self.visible_attendees(possible_time_id)
+    PossibleTime.where(id: possible_time_id).includes(:possible_attendees).first
+  end
+
+
   def possible_attendees_count
     possible_attendees.count || 0
   end
@@ -25,12 +34,16 @@ class PossibleTime < ActiveRecord::Base
     time_end.localtime.strftime("%I:%M%P")
   end
 
+  def find_specific_attendee(user_id)
+    possible_attendees.where(user_id: user_id).pluck(:id).first
+  end
+
   def user_is_available?(user_id)
-    @resp = false
-    possible_attendees.each do |pa|
-      @resp = true if pa.user_id == user_id
+    if possible_attendees.where(user_id: user_id, visible: true).count > 0
+      true
+    else
+      false
     end
-    @resp
   end
 
   def self.format_spine_date(date_string)

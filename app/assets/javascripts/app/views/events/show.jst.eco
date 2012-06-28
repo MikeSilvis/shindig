@@ -3,7 +3,7 @@
   <a data-toggle="modal" href="#mapModal">
     <%= @street %>, <%= @zipcode %>
   </a>
-  <h3><%= @description %></h3>
+  <h4><%= @description %></h4>
 </div>
 
 <div class="span4 pull-right">

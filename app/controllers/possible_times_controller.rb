@@ -11,12 +11,12 @@ class PossibleTimesController < ApplicationController
   end
 
   def create
-    @possible_time = PossibleTime.create_from_spine(params[:possible_time], params[:event_id])
+    @possible_time = PossibleTime.create_from_spine(params[:possible_time],
+                                                    params[:event_id])
   end
 
   def destroy
-    @possible_time = PossibleTime.find(params[:id])
-    @possible_time.destroy
+    @possible_time = PossibleTime.find(params[:id]).destroy
     head :no_content
   end
 
