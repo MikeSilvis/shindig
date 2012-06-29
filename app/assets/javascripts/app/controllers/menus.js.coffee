@@ -4,6 +4,7 @@ class App.Menus extends Spine.Controller
 
   events:
     "click .plusOne"     : "plusOne"
+    "click .continue"    : "continueAccordian"
     "click .remove_menu" : "removeMenu"
 
   elements:
@@ -26,6 +27,10 @@ class App.Menus extends Spine.Controller
   removeMenu: (e) =>
     e.preventDefault()
     App.Menu.find(e.target.id).destroy()
+
+  continueAccordian: (e) =>
+    e.preventDefault()
+    App.Accordian.continue("#food")
 
 class App.MenuItem extends Spine.Controller
 

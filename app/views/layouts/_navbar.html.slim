@@ -4,7 +4,8 @@
       a.brand= image_tag "shindigwithme-logo.png"
       .nav-collapse
         ul.nav.pull-right
-          li
-            a(style="line-height:30px")
-              - if current_user
-                = "signed in as: #{current_user.username}"
+          li(style="line-height:30px")
+            - if current_user
+              a= "signed in as: #{current_user.username}"
+            - else
+            	a(href="#" class='btn btn-info')  Log in

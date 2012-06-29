@@ -3,7 +3,8 @@ Message = App.Message
 class App.Messages extends Spine.Controller
 
   events:
-    "submit": "createMessage"
+    "submit"           : "createMessage"
+    'click .continue'  : "continueAccordian"
 
   constructor: ->
     super
@@ -20,6 +21,10 @@ class App.Messages extends Spine.Controller
     App.Message.create content: $("#content").val()
     App.Message.fetch()
     e.target.reset()
+
+  continueAccordian: (e) =>
+    e.preventDefault()
+    App.Accordian.continue("#messages")
 
 class App.MessageItem extends Spine.Controller
 

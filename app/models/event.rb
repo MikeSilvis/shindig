@@ -6,9 +6,8 @@ class Event < ActiveRecord::Base
   has_many :messages
   has_many :menus
   has_many :possible_times
-  before_create :generate_token, :generate_google_url
+  before_create :generate_token, :generate_google_url, :geocode_data
   after_create :add_owner_to_party
-  after_create :geocode_data
 
   def self.find_from_token(token)
     Event.where(token: token).first
@@ -19,6 +18,7 @@ class Event < ActiveRecord::Base
     if result
       self.latitude   = result.latitude
       self.longitude  = result.longitude
+      self.state      = result.state
     end
   end
 
@@ -48,4 +48,9 @@ class Event < ActiveRecord::Base
     possible_times.sort_by(&:possible_attendees_count).first
   end
 
+  def self.create_from_cookies(cookies)
+    Event.create(name: cookies[:name], description: cookies[:description],
+                 street: cookies[:street], zipcode: cookies[:zipcode])
+  end
 end
+

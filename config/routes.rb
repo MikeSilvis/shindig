@@ -10,6 +10,9 @@ Shindig::Application.routes.draw do
       collection do
         get "current"
       end
+      collection do
+        get 'create_attendee'
+      end
     end
     resources :messages
     resources :possible_times

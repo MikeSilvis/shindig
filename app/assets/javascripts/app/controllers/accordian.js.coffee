@@ -1,6 +1,5 @@
-class App.Accordian extends Spine.Controller
-
-	SERVICES = ["#messages", "#share", "#food", "#times"]
+class @App.Accordian extends Spine.Controller
+	SERVICES = ["#times", "#food", "#messages", "#share"]
 
 	constructor: ->
 	  @hideAllTheThings()
@@ -10,6 +9,18 @@ class App.Accordian extends Spine.Controller
 		$(".accordianable").hide()
 		$("#times").show()
 		$("#times_pointer").addClass("active")
+
+	@continue: (current) =>
+		for service in SERVICES
+			if next == true
+				next = false
+				$("#{service}_pointer").addClass("active")
+				$("#{service}").slideDown("slow")
+				$("#{previous}").slideUp("slow")
+				# $("#{previous}_pointer").removeClass("active")
+			if current == service
+				previous = service
+				next = true
 
 	toggleAccordian: =>
 		for service in SERVICES

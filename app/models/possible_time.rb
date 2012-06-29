@@ -17,7 +17,6 @@ class PossibleTime < ActiveRecord::Base
     PossibleTime.where(id: possible_time_id).includes(:possible_attendees).first
   end
 
-
   def possible_attendees_count
     possible_attendees.count || 0
   end

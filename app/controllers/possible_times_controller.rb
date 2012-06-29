@@ -7,7 +7,7 @@ class PossibleTimesController < ApplicationController
   end
 
   def show
-    @possible_time = PossibleTime.find(params[:id])
+    @possible_time = PossibleTime.where(id: params[:id]).includes(:possible_attendees)
   end
 
   def create

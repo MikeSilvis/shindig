@@ -1,32 +1,37 @@
+br
+br
 .row
-  .well
-    .span8
-      h1 Come Plan a Shindig with Me
-    .span2.pull-right
-      = link_to image_tag("twitter-connect.png", style: "width:150px;"), "/users/auth/twitter"
+  .span12
+    = image_tag "logo-large.png"
 .row
-  .span3(style="margin-left:0px;")
+  .span5
     .well
-      h2 Create an Event
+      h1 Invite your bros and plan the next party of a lifetime.
       hr
-      = image_tag "calendar.png", class: 'getting_started_image'
-      br
-      br
-      | Select multiple possible dates for your friends to later choose from. Google Calendar will automatically select the best date
-  .span3(style="margin-left:120px;")
+      h2 And one day achieve greatness:
+      iframe allowfullscreen="" frameborder="0" height="280" src="http://www.youtube.com/embed/xc0CB6URrV0" width="400"
+  .span5.pull-right
     .well
-      h2 DM Your Tweeps
+      h1 Start Instantly!
       hr
-      = image_tag "dm.png", class: 'getting_started_image'
-      br
-      br
-      | To let them know about the party. Who needs email?
-      br Okay okay... not everyone is so hip these days. We will give you a special invite link to share!
-  .span3.pull-right
-    .well
-      h2 Build your Menu
-      hr
-      = image_tag "ls.png", class: 'getting_started_image'
-      br
-      br
-      | Use LivingSocails new Takeout &amp; delivery options to choose the restaraunt for your next event. Your friends will get to vote on their favorite place making the menu a snap
+      = form_for Event.new do |f|
+        h2 What for?
+        = f.text_field(:name, placeholder: "Name", class: "input-full")
+        = f.text_area :description, placeholder: "Description", class: "input-full"
+        h2 Where at?
+        = f.text_field :street, placeholder: "Street", class: "input-full"
+        = f.text_field :zipcode, placeholder: "Zipcode", class: "input-full"
+        = f.submit "Less Go!", class: "btn btn-success btn-large"
+
+#signUp.modal.hide
+  .modal-header
+    button.close data-dismiss="modal" type="button"
+    h1 Shit Bro...
+  .modal-body
+    h4 You need to be logged in before you can plan your RAGER.
+    br
+    h4 You mind authenticating with Twitter first?
+    br
+    h4 Don't worry I'll keep all shindig's info
+  .modal-footer
+    a.btn.btn-primary href="/users/auth/twitter" Sure

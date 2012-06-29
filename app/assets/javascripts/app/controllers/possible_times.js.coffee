@@ -7,6 +7,7 @@ class App.PossibleTimes extends Spine.Controller
     "click .no"                 : "removeAvailabilityForAttendee"
     "click .remove_time"        : "removePossibleTime"
     'submit #new_possible_time' : "addPossibleTime"
+    'click .continue'           : "continueAccordian"
 
   constructor: ->
     super
@@ -40,6 +41,9 @@ class App.PossibleTimes extends Spine.Controller
     $('#timeModal').modal('hide')
     App.PossibleTime.find($(".remove_time").attr("id")).destroy()
 
+  continueAccordian: (e) =>
+    e.preventDefault()
+    App.Accordian.continue("#times")
 
 class App.TimeItem extends Spine.Controller
 

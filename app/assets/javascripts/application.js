@@ -21,4 +21,7 @@ jQuery(function() {
       el: $("#app")
     });
   }
+  if ($('#newAttendeeModal').length) {
+	  $('#newAttendeeModal').modal('show');
+	}
 });

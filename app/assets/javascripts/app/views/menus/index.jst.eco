@@ -8,3 +8,6 @@
 		<% end %>
 	</tr>
 </table>
+<div class='row' style='margin-top:20px;'>
+  <a href="#" class='continue pull-right btn btn-primary btn-large'>Continue <i class="icon-play icon-white"></i> </a>
+</div>

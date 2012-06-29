@@ -14,7 +14,7 @@ class MenusController < ApplicationController
   end
 
   def show
-    @menu = Menu.find(params[:id]).includes(:restaraunt)
+    @menu = Menu.where(id: params[:id]).includes(:restaraunt).first
   end
 
   def update

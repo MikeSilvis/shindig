@@ -16,33 +16,38 @@
     </tr>
   </table>
 </form>
-<div class="span6">
-  <br>
-  <% for possible_time in @possible_times: %>
-    <h3>
-      <div class="row" style="padding-bottom:20px;">
-        <div class="span9">
-            <%= possible_time.date %>:
-            <%= possible_time.time_start_hours %> - <%=  possible_time.time_end_hours %>
+<div class='row'>
+  <div class="span6">
+    <br>
+    <% for possible_time in @possible_times: %>
+      <h3>
+        <div class="row" style="padding-bottom:20px;">
+          <div class="span9">
+              <%= possible_time.date %>:
+              <%= possible_time.time_start_hours %> - <%=  possible_time.time_end_hours %>
+          </div>
+          <div class="span1">
+            <% if possible_time.available == false: %>
+              <a class="btn btn-info btn-small yes" id="<%= possible_time.id %>">YES!</a>
+            <% else: %>
+              <a class="btn btn-success btn-small no" id="<%= possible_time.id %>">&#10004;</a>
+            <% end %>
+          </div>
         </div>
-        <div class="span1">
-          <% if possible_time.available == false: %>
-            <a class="btn btn-info btn-small yes" id="<%= possible_time.id %>">YES!</a>
-          <% else: %>
-            <a class="btn btn-success btn-small no" id="<%= possible_time.id %>">&#10004;</a>
-          <% end %>
-        </div>
-      </div>
-    </h3>
-  <% end %>
-  <% if current_user.google == false: %>
-    <hr>
-    <h4>Feeling Lazy? Import your Google Calendar.</h4>
-    <img alt="Calendar" src="/assets/calendar.png">
-  <% end %>
+      </h3>
+    <% end %>
+    <% if current_user.google == false: %>
+      <hr>
+      <h4>Feeling Lazy? Import your Google Calendar.</h4>
+      <a href="/users/auth/google"><img alt="Calendar" src="/assets/calendar.png"></a>
+    <% end %>
+  </div>
+  <div class="span5 pull-right">
+    <div id="calendar"></div>
+  </div>
 </div>
-<div class="span5 pull-right">
-  <div id="calendar"></div>
+<div class='row' style='margin-top:20px;'>
+  <a href="#" class='continue pull-right btn btn-primary btn-large'>Continue <i class="icon-play icon-white"></i> </a>
 </div>
 
 
