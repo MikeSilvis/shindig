@@ -14,12 +14,11 @@ class @App.Accordian extends Spine.Controller
 		for service in SERVICES
 			if next == true
 				next = false
+				$("#{current}").slideUp("slow")
+				$("#{current}_pointer").removeClass("active")
+				$("#{service}").find(".accordianable").slideDown("slow")
 				$("#{service}_pointer").addClass("active")
-				$("#{service}").slideDown("slow")
-				$("#{previous}").slideUp("slow")
-				# $("#{previous}_pointer").removeClass("active")
 			if current == service
-				previous = service
 				next = true
 
 	toggleAccordian: =>
