@@ -1,6 +1,8 @@
 class EventsController < ApplicationController
   before_filter :require_login
   before_filter :require_admin, only: [:update]
+  caches_action :index, :show
+  cache_sweeper :event_sweeper
 
   def show
     respond_to do |format|
