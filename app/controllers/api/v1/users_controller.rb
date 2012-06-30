@@ -7,7 +7,7 @@ class Api::V1::UsersController < ApplicationController
 
   def current
   	@user = User.find_user_and_event_relations(current_user.id, params[:event_id])
-  	render "users/show"
+  	render "api/v1/users/show"
   end
 
 end

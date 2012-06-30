@@ -1,4 +1,4 @@
-class AttendeesController < ApplicationController
+class Api::V1::AttendeesController < ApplicationController
   before_filter :require_login, only: [:index, :show, :update, :current]
   # caches_page :index, :show
   # cache_sweeper :attendee_sweeper
@@ -30,7 +30,7 @@ class AttendeesController < ApplicationController
 
   def current
     @attendee = current_user.attendees.where(event_id: params[:event_id])
-    render "attendees/show"
+    render "/api/v1/attendees/show"
   end
 
 end

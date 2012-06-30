@@ -2,7 +2,7 @@ class App.PossibleTime extends Spine.Model
   @configure 'PossibleTime', 'event_id', 'time_end', 'time_start'
   @extend Spine.Model.Ajax
 
-  @url: => "/events/#{scoped_event_id}/possible_times"
+  @url: => "/api/v1/events/#{scoped_event_id}/possible_times"
 
   confirmTimeForAttendee: =>
   	App.PossibleAttendee.create possible_time_id: this.id

@@ -70,7 +70,7 @@ class CalendarMethods
       })
       $("#calendar").fullCalendar
         editable: false
-        events: "/events/#{scoped_event_id}/possible_times.json"
+        events: "/api/v1/events/#{scoped_event_id}/possible_times.json"
         eventClick: (calEvent, jsEvent, view) ->
           new App.TimeItem(calEvent)
 

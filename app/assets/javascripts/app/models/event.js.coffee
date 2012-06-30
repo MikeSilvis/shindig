@@ -3,3 +3,5 @@ class @App.Event extends Spine.Model
   @hasMany 'messages', "Message"
 
   @extend Spine.Model.Ajax
+
+  @url: => "/api/v1/events/"
