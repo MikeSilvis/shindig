@@ -50,7 +50,6 @@
   <a href="#" class='continue pull-right btn btn-primary btn-large'>Continue <i class="icon-play icon-white"></i> </a>
 </div>
 
-
 <div class="modal hide" id="timeModal">
   <div id="timeModalContent">
   </div>

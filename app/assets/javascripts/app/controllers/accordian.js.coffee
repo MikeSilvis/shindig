@@ -15,13 +15,13 @@ class @App.Accordian extends Spine.Controller
 		$("#{current}").slideUp("slow")
 		$("#{next}").slideDown("slow")
 		$("#{next}_pointer").addClass("active")
-		$("#{current}_pointer").removeClass("active")
+		# $("#{current}_pointer").removeClass("active")
 
 	toggleAccordian: =>
 		for service in SERVICES
 			$("#{service}_pointer").hover ->
 				$(this).toggleClass("selectable_helpers") unless $(this).hasClass("active")
-			$("#{service}_pointer").click ->
+			$("#{service}_pointer").click (e) ->
 				unless $(this).hasClass("active")
 					for service_hide in SERVICES
 						$("#{service_hide}").slideUp('slow')
