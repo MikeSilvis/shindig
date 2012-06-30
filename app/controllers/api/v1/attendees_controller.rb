@@ -8,18 +8,8 @@ class Api::V1::AttendeesController < ApplicationController
                                                      current_user.id)
   end
 
-  def new
-    @event = Event.find_by_token(params[:event_id])
-  end
-
-  def create_attendee
-    event = Event.find_by_token(params[:event_id])
-    event.join_event(current_user.id)
-    redirect_to event_path(event.id), notice: "Radical dude, this shindig is going to rock now that you're coming!"
-  end
-
   def show
-    @attendee = Attendee.find(params[:id])
+    @attendee = Attendee.where(id: params[:id]).includes(:user).first
   end
 
   def update

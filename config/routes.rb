@@ -11,9 +11,6 @@ Shindig::Application.routes.draw do
           collection do
             get "current"
           end
-          collection do
-            get 'create_attendee'
-          end
         end
         resources :messages
         resources :possible_times
@@ -33,6 +30,13 @@ Shindig::Application.routes.draw do
     end
   end
 
-  resources :events, only: [:show]
+  resources :events, only: [:show, :create] do
+    resources :attendees, only: [:new] do
+      collection do
+        get 'create_attendee'
+      end
+    end
+  end
+
   root :to => "home#index"
 end
