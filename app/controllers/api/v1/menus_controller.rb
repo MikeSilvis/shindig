@@ -1,4 +1,4 @@
-class MenusController < ApplicationController
+class Api::V1::MenusController < ApplicationController
   before_filter :require_login
 
   def index

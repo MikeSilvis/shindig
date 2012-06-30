@@ -1,4 +1,4 @@
-class TweetsController < ApplicationController
+class Api::V1::TweetsController < ApplicationController
 	before_filter :require_login
 
 	def index

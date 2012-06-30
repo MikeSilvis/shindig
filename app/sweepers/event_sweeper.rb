@@ -2,7 +2,7 @@ class EventSweeper < ActionController::Caching::Sweeper
 	observe Event
 
 	def sweep(event)
-    expire_page events_path
+    # expire_page events_path
     expire_page event_path(event)
     expire_page "/events/1.json"
   end

@@ -1,4 +1,4 @@
-class PossibleAttendeesController < ApplicationController
+class Api::V1::PossibleAttendeesController < ApplicationController
 	before_filter :require_login
 
 	def create

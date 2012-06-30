@@ -1,4 +1,4 @@
-class PossibleTimesController < ApplicationController
+class Api::V1::PossibleTimesController < ApplicationController
 	before_filter :require_login
 	before_filter :require_admin, only: [:destroy]
 

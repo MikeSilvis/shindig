@@ -1,4 +1,4 @@
-class RestarauntsController < ApplicationController
+class Api::V1::RestarauntsController < ApplicationController
   before_filter :require_login
 
   def index

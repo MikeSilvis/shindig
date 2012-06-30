@@ -1,4 +1,4 @@
-class MessagesController < ApplicationController
+class Api::V1::MessagesController < ApplicationController
   before_filter :require_login
 
   def index
