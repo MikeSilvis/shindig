@@ -11,14 +11,10 @@ class @App.Accordian extends Spine.Controller
 		$("#times_pointer").addClass("active")
 
 	@continue: (current) =>
-		for service in SERVICES
-			if next == true
-				next = false
-				$("#{current}").slideUp("slow")
-				$("#{service}").slideDown("slow")
-				$("#{service}_pointer").addClass("active")
-			if current == service
-				next = true
+		next = SERVICES[SERVICES.indexOf(current) + 1]
+		$("#{current}").slideUp("slow")
+		$("#{next}").slideDown("slow")
+		$("#{next}_pointer").addClass("active")
 		$("#{current}_pointer").removeClass("active")
 
 	toggleAccordian: =>
