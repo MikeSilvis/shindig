@@ -2,7 +2,7 @@ class PusherObserver < ActiveRecord::Observer
   observe :message, :menu, :attendee, :possible_time
 
   def after_create(rec)
-  	publish(:update, rec)
+  	publish(:create, rec)
   end
 
   def after_update(rec)
