@@ -1,15 +1,17 @@
 require 'spec_helper'
 
 describe "Attendee Request", :type => :api do
-	let(:current_user) { FactoryGirl.create(:user)}
-	let(:event) { FactoryGirl.create(:event, user: current_user)}
-	let(:attendee) { Attendee.create(event_id: event.id, user_id: current_user.id)}
-	let!(:attendee2) { Attendee.create(event_id: event.id, user_id: FactoryGirl.create(:user).id)}
 	before(:each) do
+		Event.any_instance.stub(:generate_google_url).and_return(true)
+		Event.any_instance.stub(:geocode_data).and_return(true)
 		Api::V1::EventsController.any_instance.stub(:current_user).and_return(current_user)
 		Api::V1::AttendeesController.any_instance.stub(:current_user).and_return(current_user)
 		Api::V1::AttendeesController.any_instance.stub(:require_login).and_return(true)
 	end
+	let!(:current_user) { FactoryGirl.create(:user)}
+	let!(:event) { FactoryGirl.create(:event, user: current_user)}
+	let!(:attendee) { Attendee.create(event_id: event.id, user_id: FactoryGirl.create(:user).id)}
+	let!(:attendee2) { Attendee.create(event_id: event.id, user_id: FactoryGirl.create(:user).id)}
 	describe "#update" do
 		it "updates an attendee" do
 	  	put api_v1_event_attendee_path(event.id, attendee.id, "json"), attendee: { menu_id: 1}

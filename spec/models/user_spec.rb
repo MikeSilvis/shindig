@@ -1,6 +1,10 @@
 require 'spec_helper'
 
 describe User do
+  before(:each) do
+    Event.any_instance.stub(:geocode_data).and_return(true)
+    Event.any_instance.stub(:generate_google_url).and_return(true)
+  end
   let(:user) { User.new(username: "Weee", email: "mikesilvis@gmail.com") }
   describe "#known_tweep_ids" do
     let(:tweeps) do
@@ -38,11 +42,8 @@ describe User do
     end
   end
   describe "#find_user_and_event_relations(user_id, event_id)" do
-    let(:event) { Event.create(name: "WA", description: "ZAP")}
-    let(:attendee) { Attendee.new(event_id: event.id) }
-    before(:each) do
-      user.attendees << attendee
-    end
+    let(:event) { FactoryGirl.create(:event)}
+    let(:attendee) { Attendee.new(event_id: event.id, user_id: user.id) }
     describe "#current_attendee(event_id)" do
       it "returns the current attendee for a given room" do
         user.current_attendee(event.id).should be_a(Attendee)

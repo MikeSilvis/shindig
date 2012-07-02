@@ -2,6 +2,8 @@ require 'spec_helper'
 
 describe Menu do
 	before(:each) do
+		Event.any_instance.stub(:generate_google_url).and_return(true)
+		Event.any_instance.stub(:geocode_data).and_return(true)
 		Attendee.any_instance.stub(:find_availability).and_return(true)
 	end
 	let!(:new_menu) { Menu.create() }

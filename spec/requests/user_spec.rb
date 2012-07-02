@@ -4,8 +4,9 @@ describe "USER", :type => :api do
 	before(:each) do
 		Api::V1::UsersController.any_instance.stub(:current_user).and_return(FactoryGirl.create(:user))
 		Api::V1::UsersController.any_instance.stub(:require_login).and_return(true)
+    Event.any_instance.stub(:geocode_data).and_return(true)
+    Event.any_instance.stub(:generate_google_url).and_return(true)
 	end
-
 	let!(:event) { FactoryGirl.create(:event) }
 	let(:user)  { FactoryGirl.create(:user)  }
 
