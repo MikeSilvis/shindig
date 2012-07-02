@@ -20,6 +20,12 @@ class App.PossibleTimes extends Spine.Controller
     @html @view("possible_times/index")(possible_times: @possible_times, date: @date)
     $('#add_date').datepicker()
     new CalendarMethods()
+    @continueToolTip()
+
+  continueToolTip: =>
+    unless @possible_times.length
+      $(".continue").addClass("disabled")
+      $(".continue").tooltip({trigger: "hover"})
 
   currentDate: =>
     d = new Date()
@@ -43,7 +49,7 @@ class App.PossibleTimes extends Spine.Controller
 
   continueAccordian: (e) =>
     e.preventDefault()
-    App.Accordian.continue("#times")
+    App.Accordian.continue("#times") if @possible_times.length > 0
 
 class App.TimeItem extends Spine.Controller
 

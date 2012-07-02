@@ -16,4 +16,5 @@ class App.Restaurants extends Spine.Controller
   createMenu: =>
     rest = App.Restaraunt.first()
     App.Menu.create restaraunt_id: rest.id, name: rest.name
+    App.Restaraunt.first().destroy({ajax: false})
     $("#add_restaurant").val("")

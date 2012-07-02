@@ -3,5 +3,5 @@
   <input type='text' name='content' placeholder='new message...' class='input-full' id="content">
 </form>
 <div class='row' style='margin-top:20px;'>
-  <a href="#" class='continue pull-right btn btn-primary btn-large'>Continue <i class="icon-play icon-white"></i> </a>
+  <a href="#" class='continue pull-right btn btn-primary btn-large'>Continue <i class="icon-play continue icon-white"></i> </a>
 </div>

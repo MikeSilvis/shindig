@@ -5,7 +5,7 @@ class App.Shares extends Spine.Controller
 		$.getJSON("/api/v1/events/#{scoped_event_id}/tweets.json", @render)
 		$("#send_tweet").live 'submit', (e) =>
 			e.preventDefault()
-			$.post "/events/#{scoped_event_id}/tweets",
+			$.post "/api/v1/events/#{scoped_event_id}/tweets",
 				content: $("#add_tweet").val()
 			$("#add_tweet").val("")
 			$("#tweet_success").fadeIn().delay(3000).fadeOut()

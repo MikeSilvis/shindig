@@ -1,1 +1,1 @@
-<input type="text" placeholder="Add a Restaurant..." id="add_restaurant" class='input-full'>
+<input type="text" placeholder="add a restaurant to vote from..." id="add_restaurant" class='input-full'>

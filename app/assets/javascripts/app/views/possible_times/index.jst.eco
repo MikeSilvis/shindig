@@ -5,10 +5,10 @@
         <input type="text" id="add_date" class='input-full' value="<%= @date %>">
       </td>
       <td>
-        <input type="text" placeholder="Start Time..." id="add_time_start" class='input-full'>
+        <input type="text" placeholder="enter start time..." id="add_time_start" class='input-full'>
       </td>
       <td>
-        <input type="text" placeholder="End Time..." id="add_time_end" class='input-full'>
+        <input type="text" placeholder="enter end time..." id="add_time_end" class='input-full'>
       </td>
       <td>
         <button class="btn btn-success btn-small addTime" style='margin-bottom:15px;'>+</button>
@@ -48,7 +48,9 @@
   </div>
 </div>
 <div class='row' style='margin-top:20px;'>
-  <a href="#" class='continue pull-right btn btn-primary btn-large'>Continue <i class="icon-play icon-white"></i> </a>
+  <a href="#" class='continue pull-right btn btn-primary btn-large' rel='tooltip' title='Add a Possible Time first'>
+    Continue <i class="icon-play icon-white continue"></i>
+  </a>
 </div>
 
 <div class="modal hide" id="timeModal">
