@@ -1,7 +1,7 @@
 Shindig::Application.routes.draw do
   require 'resque/server'
   mount Resque::Server.new, :at => "/resque"
-
+  get "/login" => "home#login_modal"
   namespace :api do
     namespace :v1 do
       resources :events do
@@ -37,6 +37,5 @@ Shindig::Application.routes.draw do
       end
     end
   end
-
   root :to => "home#index"
 end

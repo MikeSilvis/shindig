@@ -1,4 +1,5 @@
 class AttendeesController < ApplicationController
+	before_filter :require_login, only: [:create_attendee]
 
 	def new
     @event = Event.find_by_token(params[:event_id])

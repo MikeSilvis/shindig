@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   	unless current_user
 	    session[:redirect_url] = request.fullpath
 	    redirect_to "/users/auth/twitter"
-  	end
+	  end
   end
 
 end

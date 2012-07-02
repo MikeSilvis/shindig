@@ -8,6 +8,10 @@ class HomeController < ApplicationController
   	end
   end
 
+  def login_modal
+
+  end
+
 private
 
 	def clear_event_cookies
