@@ -4,6 +4,7 @@ class Attendee < ActiveRecord::Base
   belongs_to :user
   belongs_to :menu
   after_create :find_availability
+  validates_uniqueness_of :user_id, :scope => [:event_id]
 
   def self.add_event(token)
     event = Event.find_from_token(token)

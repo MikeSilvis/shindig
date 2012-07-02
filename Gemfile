@@ -22,7 +22,7 @@ gem 'gmaps4rails'
 gem 'squeel'
 gem 'shortly'
 gem 'simple_form'
-
+gem 'client_side_validations'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'

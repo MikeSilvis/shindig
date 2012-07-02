@@ -9,3 +9,6 @@
               a= "signed in as: #{current_user.username}"
             - else
             	a(href="#" class='btn btn-info')  Log in
+          - if current_user
+            li(style="line-height:30px")
+              a(data-toggle="modal" href="#allEvents") Show Events

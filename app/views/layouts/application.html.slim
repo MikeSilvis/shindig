@@ -12,3 +12,14 @@ html
     .container#main_content
       = render "layouts/flash_message"
       = yield
+
+- if current_user
+  #allEvents.modal.hide
+    .modal-header
+      button.close data-dismiss="modal" type="button"
+      h3 Your Events
+    .modal-body
+      - current_user.attendees.each do |a|
+        h4= link_to a.event.name, event_path(a.event.id)
+    .modal-footer
+      a.btn data-dismiss="modal" href="#" Close

@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require app
+//= require rails.validations
 //= require_tree .
 
 jQuery(function() {

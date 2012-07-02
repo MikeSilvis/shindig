@@ -14,13 +14,17 @@ br
     .well
       h1 Start Instantly!
       hr
-      = form_for Event.new do |f|
+      = form_for Event.new, :validate => true  do |f|
         h2 What for?
-        = f.text_field(:name, placeholder: "Name", class: "input-full")
+        .control-group
+          = f.text_field(:name, placeholder: "Name", class: "input-full")
+        .control-group
         = f.text_area :description, placeholder: "Description", class: "input-full"
         h2 Where at?
-        = f.text_field :street, placeholder: "Street", class: "input-full"
-        = f.text_field :zipcode, placeholder: "Zipcode", class: "input-full"
+        .control-group
+          = f.text_field :street, placeholder: "Street", class: "input-full"
+        .control-group
+          = f.text_field :zipcode, placeholder: "Zipcode", class: "input-full"
         = f.submit "Less Go!", class: "btn btn-success btn-large"
 
 #signUp.modal.hide

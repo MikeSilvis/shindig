@@ -1,6 +1,8 @@
 class Event < ActiveRecord::Base
   attr_accessible :city, :description, :name, :state, :street, :user_id, :zipcode
   validates_presence_of :name, :description
+  validates_format_of :zipcode, :with => /\d/, :message => "Zipcodes are only digits brah."
+  validates_length_of :zipcode, :within => 5..5
   belongs_to :user
   has_many :attendees
   has_many :messages
