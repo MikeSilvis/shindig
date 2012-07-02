@@ -3,6 +3,7 @@ html
   head
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application", "http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0"
+    = airbrake_javascript_notifier
     = pusher_meta_tags
     = csrf_meta_tags
     title Shindig
