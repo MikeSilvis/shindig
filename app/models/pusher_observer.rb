@@ -2,11 +2,22 @@ class PusherObserver < ActiveRecord::Observer
   observe :message, :menu, :attendee, :possible_time
 
   def after_create(rec)
-    Resque.enqueue(PushPusher, :update, rec, rec.class.name)
+  	publish(:update, rec)
   end
 
   def after_update(rec)
-    Resque.enqueue(PushPusher, :update, rec, rec.class.name)
+  	publish(:update, rec)
+  end
+
+	def publish(type, record)
+    Pusher['observer'].trigger!(
+                                type,
+		                                {
+		                                  id: record["id"],
+		                                  class: record.class.name,
+		                                  record: record
+		                                },
+                                )
   end
 
 end

@@ -11,14 +11,15 @@
         <input type="text" placeholder="End Time..." id="add_time_end" class='input-full'>
       </td>
       <td>
-        <button class="btn btn-info btn-small addTime" style='margin-bottom:15px;'>+</button>
+        <button class="btn btn-success btn-small addTime" style='margin-bottom:15px;'>+</button>
       </td>
     </tr>
   </table>
 </form>
 <div class='row'>
   <div class="span6">
-    <br>
+    <h2>Possible Times: </h2>
+    <hr>
     <% for possible_time in @possible_times: %>
       <h3>
         <div class="row" style="padding-bottom:20px;">
@@ -28,9 +29,9 @@
           </div>
           <div class="span1">
             <% if possible_time.available == false: %>
-              <a class="btn btn-info btn-small yes" id="<%= possible_time.id %>">YES!</a>
+              <a class="btn btn-success btn-small yes" id="<%= possible_time.id %>">YES!</a>
             <% else: %>
-              <a class="btn btn-success btn-small no" id="<%= possible_time.id %>">&#10004;</a>
+              <a class="btn btn-info btn-small no" id="<%= possible_time.id %>">&#10004;</a>
             <% end %>
           </div>
         </div>
