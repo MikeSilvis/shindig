@@ -2,21 +2,21 @@ class PusherObserver < ActiveRecord::Observer
   observe :message, :menu, :attendee, :possible_time
 
   def after_create(rec)
-  	publish(:create, rec)
+    publish(rec.event_id, rec)
   end
 
   def after_update(rec)
-  	publish(:update, rec)
+    publish(rec.event_id, rec)
   end
 
-	def publish(type, record)
+  def publish(type, record)
     Pusher['observer'].trigger!(
                                 type,
-		                                {
-		                                  id: record["id"],
-		                                  class: record.class.name,
-		                                  record: record
-		                                },
+                                    {
+                                      id: record["id"],
+                                      class: record.class.name,
+                                      record: record
+                                    },
                                 )
   end
 

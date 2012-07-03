@@ -10,15 +10,11 @@ class PusherHandler extends Spine.Module
     @channel = @pusher.subscribe 'observer'
     @channel.bind_all @process
 
-  process: (type, msg) =>
+  process: (event_id, msg) =>
     klass = eval("App.#{msg.class}") if msg
     if klass == App.Attendee
       msg.id = msg.menu_id
       klass  = App.Menu
-    switch type
-      when 'create'
-        klass.fetch(id: msg.id)
-      when 'update'
-        klass.fetch(id: msg.id)
+    klass.fetch(id: msg.id) if event_id == scoped_event_id
 
 $ -> new PusherHandler
