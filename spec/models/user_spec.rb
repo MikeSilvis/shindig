@@ -4,6 +4,8 @@ describe User do
   before(:each) do
     Event.any_instance.stub(:geocode_data).and_return(true)
     Event.any_instance.stub(:generate_google_url).and_return(true)
+    Authentication.any_instance.stub(:verify_calendar).and_return(true)
+    Authentication.any_instance.stub(:import_tweeps).and_return(true)
   end
   let(:user) { User.new(username: "Weee", email: "mikesilvis@gmail.com") }
   describe "#known_tweep_ids" do

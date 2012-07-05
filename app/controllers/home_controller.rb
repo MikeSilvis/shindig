@@ -9,7 +9,6 @@ class HomeController < ApplicationController
   end
 
   def login_modal
-
   end
 
 private
