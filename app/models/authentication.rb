@@ -1,7 +1,7 @@
 class Authentication < ActiveRecord::Base
   attr_accessible :provider, :uid, :user_id, :token, :avatar, :username, :refresh_token, :secret
   belongs_to :user
-  after_create :import_tweeps
+  after_create :import_tweeps, :verify_calendar
 
   SERVICES.each do |service|
     define_singleton_method "#{service}".to_sym do
@@ -33,5 +33,13 @@ class Authentication < ActiveRecord::Base
 
   def import_tweeps
     Resque.enqueue(PullTweets, user_id) if provider == "twitter"
+  end
+
+  def verify_calendar
+    if provider == "google"
+      user.attendees.each do |attendee|
+        Resque.enqueue(PullAvailabilityAttendee, attendee.id)
+      end
+    end
   end
 end
