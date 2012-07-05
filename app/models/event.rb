@@ -42,6 +42,10 @@ class Event < ActiveRecord::Base
     attendees.create(user_id: new_user_id)
   end
 
+  def is_attendee?(user)
+    attendees.where(user_id: user.id).count == 1
+  end
+
   def is_owner?(user)
     user.id == user_id
   end
