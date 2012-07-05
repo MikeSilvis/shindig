@@ -15,6 +15,9 @@ class PusherHandler extends Spine.Module
     if klass == App.Attendee
       msg.id = msg.menu_id
       klass  = App.Menu
+    if klass == App.PossibleAttendee
+      msg.id = msg.possible_time_id
+      klass  = App.PossibleTime
     klass.fetch(id: msg.id) if event_id == scoped_event_id
 
 $ -> new PusherHandler
