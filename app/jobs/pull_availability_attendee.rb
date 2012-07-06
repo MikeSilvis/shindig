@@ -7,7 +7,7 @@ class PullAvailabilityAttendee
 
   def self.run(attendee)
     attendee.event.possible_times.each do |possible_time|
-      GoogleCalendar.new(attendee.user, possible_time).save_availability
+      GoogleCalendar.new(attendee.user, possible_time).save_availability if attende.user.google
     end
   end
 
