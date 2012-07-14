@@ -5,7 +5,9 @@ Shindig::Application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :events do
+        resources :tweets
         resources :menus
+        resources :items
         resources :attendees do
           collection do
             get "current"
@@ -19,7 +21,6 @@ Shindig::Application.routes.draw do
           end
         end
         resources :possible_attendees
-        resources :tweets
       end
       resources :restaraunts do
         collection do

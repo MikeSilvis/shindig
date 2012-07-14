@@ -1,9 +1,10 @@
 class Api::V1::TweetsController < ApplicationController
 	before_filter :require_login
+  caches_page :show
 
-	def index
+  def show
 		render json: current_user.tweeps.order(:username).pluck(:username).map { |t| "@#{t}"}
-	end
+  end
 
 	def create
 		Share.tweet(current_user, params[:content], params[:event_id])

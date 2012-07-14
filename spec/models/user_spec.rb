@@ -45,14 +45,10 @@ describe User do
   end
   describe "#find_user_and_event_relations(user_id, event_id)" do
     let(:event) { FactoryGirl.create(:event)}
-    let(:attendee) { Attendee.new(event_id: event.id, user_id: user.id) }
-    describe "#current_attendee(event_id)" do
-      it "returns the current attendee for a given room" do
-        user.current_attendee(event.id).should be_a(Attendee)
-      end
-    end
+    let!(:attendee) { Attendee.new(event_id: event.id, user_id: user.id) }
     it "returns a user relation" do
       user.save
+      user.attendees << attendee
       User.find_user_and_event_relations(user.id, event.id)
     end
   end

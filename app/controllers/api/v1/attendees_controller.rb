@@ -17,7 +17,7 @@ class Api::V1::AttendeesController < ApplicationController
   end
 
   def current
-    @attendee = current_user.attendees.where(event_id: params[:event_id])
+    @attendee = current_user.attendees.where(event_id: params[:event_id]).includes(:user)
     render "/api/v1/attendees/show"
   end
 

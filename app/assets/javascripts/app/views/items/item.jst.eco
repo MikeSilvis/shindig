@@ -1,0 +1,6 @@
+<tr>
+  <td><%= @category %></td>
+  <td><%= @name %></td>
+  <td><%= @quantity %></td>
+  <td><%= @username %></td>
+</tr>

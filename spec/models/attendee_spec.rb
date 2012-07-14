@@ -12,4 +12,16 @@ describe Attendee do
       Attendee.last.event_id.should == event.id
     end
   end
+  describe "#is_going_to?(event_id, user_id)" do
+    let(:user) { FactoryGirl.create(:user)}
+    let(:event) { FactoryGirl.create(:event)}
+    let!(:attendee) { Attendee.create(user_id: user.id, event_id: event.id)}
+    it "returns true" do
+      Attendee.is_going_to?(event.id,user.id).should be_true
+    end
+    it "returns false" do
+      Attendee.is_going_to?(2,2).should be_false
+    end
+  end
+
 end

@@ -20,7 +20,7 @@ html
       button.close data-dismiss="modal" type="button"
       h3 Your Events
     .modal-body
-      - current_user.attendees.each do |a|
+      - current_user.attendees.includes(:event).each do |a|
         h4= link_to a.event.name, event_path(a.event.id)
     .modal-footer
       a.btn data-dismiss="modal" href="#" Close

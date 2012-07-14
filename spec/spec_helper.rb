@@ -13,6 +13,11 @@ class PusherObserver
     true
   end
 end
+module Resque
+  def self.enqueue(*params)
+    true
+  end
+end
 RSpec.configure do |config|
   # ## Mock Framework
   #

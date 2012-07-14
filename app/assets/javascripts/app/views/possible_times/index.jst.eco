@@ -5,13 +5,23 @@
         <input type="text" id="add_date" class='input-full' value="<%= @date %>">
       </td>
       <td>
-        <input type="text" placeholder="enter start time..." id="add_time_start" class='input-full'>
+        <select data-placeholder="Enter start time..." id="add_time_start">
+          <option></option>
+          <% for time in TIMES: %>
+            <option value='<%= time%>'><%= time %></option>
+          <% end %>
+        </select>
       </td>
       <td>
-        <input type="text" placeholder="enter end time..." id="add_time_end" class='input-full'>
+        <select data-placeholder="Enter end time..." id="add_time_end">
+          <option></option>
+          <% for time in TIMES: %>
+            <option value='<%= time%>'><%= time %></option>
+          <% end %>
+        </select>
       </td>
       <td>
-        <button class="btn btn-success btn-small addTime" style='margin-bottom:15px;'>+</button>
+        <button class="btn btn-success btn-small addTime" style='margin-bottom:15px; margin-left:10px;'>+</button>
       </td>
     </tr>
   </table>

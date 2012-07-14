@@ -8,6 +8,7 @@ class Event < ActiveRecord::Base
   has_many :messages
   has_many :menus
   has_many :possible_times
+  has_many :items
   before_create :generate_token, :generate_google_url, :geocode_data
   after_create :add_owner_to_party
 
@@ -35,18 +36,14 @@ class Event < ActiveRecord::Base
   end
 
   def add_owner_to_party
-    join_event(user_id)
+    join_event(user_id, true)
   end
 
-  def join_event(new_user_id)
-    attendees.create(user_id: new_user_id)
+  def join_event(new_user_id, owner=false)
+    attendees.create(user_id: new_user_id, owner: owner)
   end
 
-  def is_attendee?(user)
-    attendees.where(user_id: user.id).count == 1
-  end
-
-  def is_owner?(user)
+def is_owner?(user)
     user.id == user_id
   end
 
@@ -59,4 +56,3 @@ class Event < ActiveRecord::Base
                  street: cookies[:street], zipcode: cookies[:zipcode])
   end
 end
-

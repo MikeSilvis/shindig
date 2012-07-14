@@ -18,7 +18,7 @@ class PossibleTime < ActiveRecord::Base
   end
 
   def possible_attendees_count
-    possible_attendees.count || 0
+    possible_attendees.size || 0
   end
 
   def find_availability

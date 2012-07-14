@@ -1,0 +1,31 @@
+<form id="add_items">
+  <div class="span4" style='margin-left:0px; margin-top:3px;'>
+    <select class="input-full" name="category_id" id="category_id">
+      <option>Category</option>
+      <option value="1">Beer</option>
+      <option value="2">Spirits</option>
+      <option value="3">Wine</option>
+      <option value="4">Grill</option>
+      <option value="5">Snacks</option>
+    </select>
+  </div>
+  <div class="span4" style="width:306px;">
+    <input type="text" placeholder="What?" id="item" class='input-full' name="name">
+  </div>
+  <div class="span2">
+    <input type="text" placeholder="How much?" id="quantity" class='input-full' name="quantity">
+  </div>
+  <button class="btn btn-success btn-small" style='margin-left: 5px; margin-top:10px;'>+</button>
+</form>
+<table class="table table-striped table_height item_container">
+  <tr>
+    <th>Category</th>
+    <th>Name</th>
+    <th>Quantity</th>
+    <th>Who</th>
+  </tr>
+</table>
+
+<div class='row' style='margin-top:20px;'>
+  <a href="#" class='continue pull-right btn btn-primary btn-large'>Continue <i class="icon-play continue icon-white"></i> </a>
+</div>

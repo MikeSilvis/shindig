@@ -34,14 +34,10 @@ class User < ActiveRecord::Base
     google != nil
   end
 
-  def current_attendee(event_id)
-    self.owner = Event.find(event_id).is_owner?(self)
-    self.attendee = attendees.find_by_event_id(event_id)
-  end
-
   def self.find_user_and_event_relations(user_id, event_id)
-    user = User.find(user_id)
-    user.current_attendee(event_id)
+    user = User.where(id: user_id).includes(:attendees).where("attendees.event_id" => event_id).first
+    user.attendee = user.attendees.first
+    user.owner = user.attendee.owner
     user
   end
 end

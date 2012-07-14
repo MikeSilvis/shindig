@@ -14,8 +14,8 @@
 //= require jquery_ujs
 //= require app
 //= require rails.validations
+//= require chosen-jquery
 //= require_tree .
-
 jQuery(function() {
   if ($("#app").length) {
     return new App({

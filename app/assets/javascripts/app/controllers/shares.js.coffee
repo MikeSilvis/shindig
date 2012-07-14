@@ -2,10 +2,10 @@ class App.Shares extends Spine.Controller
 
 	constructor: ->
 		super
-		$.getJSON("/api/v1/events/#{scoped_event_id}/tweets.json", @render)
+		$.getJSON("/api/v1/events/#{scoped_event_id}/tweets/#{current_user.id}.json", @render)
 		$("#send_tweet").live 'submit', (e) =>
 			e.preventDefault()
-			$.post "/api/v1/events/#{scoped_event_id}/tweets",
+			$.post "/api/v1/tweets",
 				content: $("#add_tweet").val()
 			$("#add_tweet").val("")
 			$("#tweet_success").fadeIn().delay(3000).fadeOut()

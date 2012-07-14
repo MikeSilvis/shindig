@@ -1,5 +1,6 @@
 class Api::V1::RestarauntsController < ApplicationController
   before_filter :require_login
+  caches_page :index, :search, :show
 
   def index
     render json: Restaraunt.all

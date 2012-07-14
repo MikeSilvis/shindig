@@ -17,7 +17,7 @@ body {
   margin-left:0px;
 }
 .posted_at {
-  color: #317eac;
+  color: #66ac15;
   font-size:.8em;
 }
 #message_container {
@@ -71,4 +71,10 @@ body {
 }
 .field_with_errors {
   color:red;
+}
+.chzn-container-single .chzn-single {
+  margin-top:-10px;
+  height:48px;
+  font-size:18px;
+  line-height: 48px;
 }

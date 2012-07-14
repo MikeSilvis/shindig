@@ -1,5 +1,5 @@
 class Attendee < ActiveRecord::Base
-  attr_accessible :event_id, :user_id, :menu_id
+  attr_accessible :event_id, :user_id, :menu_id, :owner
   belongs_to :event
   belongs_to :user
   belongs_to :menu
@@ -16,7 +16,10 @@ class Attendee < ActiveRecord::Base
   end
 
   def self.find_attendees_except_self(event_id_param, user_id_param)
-    Attendee.where{(event_id.eq event_id_param) & (user_id.not_eq user_id_param)}
+    Attendee.where{(event_id.eq event_id_param) & (user_id.not_eq user_id_param)}.includes(:user)
   end
 
+  def self.is_going_to?(event_id, user_id)
+    Attendee.where(event_id: event_id, user_id: user_id).count == 1
+  end
 end

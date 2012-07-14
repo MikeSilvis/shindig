@@ -11,5 +11,5 @@
 </form>
 <h3>
 	Or Share this link
-	<input type='text' id='share_link' value="http://shindigwith.me/events/<%= event_token %>/attendees/new">
+	<input type='text' id='share_link' value="http://shindigwith.me/events/<%= event_token %>/attendees/new" class="input-full">
 </h3>
