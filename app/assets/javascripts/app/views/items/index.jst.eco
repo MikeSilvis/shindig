@@ -6,7 +6,8 @@
       <option value="2">Spirits</option>
       <option value="3">Wine</option>
       <option value="4">Grill</option>
-      <option value="5">Snacks</option>
+      <option value="6">Pasta</option>
+      <option value="7">Desert</option>
     </select>
   </div>
   <div class="span4" style="width:306px;">
