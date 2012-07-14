@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
 
   def index
+    session[:redirect_url] = "/"
   	if cookies[:name] && current_user
   		event = current_user.events.create_from_cookies(cookies)
   		clear_event_cookies
