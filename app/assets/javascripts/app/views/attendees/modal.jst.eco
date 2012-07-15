@@ -10,7 +10,6 @@
       </div>
       <div class="span7" style='word-wrap:break-word'>
         <h4><%= attendee.user.name %></h4>
-        <h4>@<%= attendee.user.username %></h4>
       </div>
     </div>
   <% end %>

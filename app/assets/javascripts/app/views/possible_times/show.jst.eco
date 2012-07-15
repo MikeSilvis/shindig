@@ -13,7 +13,6 @@
         </div>
         <div class="span7">
           <h4><%= user.name %></h4>
-          <h4>@<%= user.username %></h4>
         </div>
       </div>
     <% end %>
