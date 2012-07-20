@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120714165646) do
+ActiveRecord::Schema.define(:version => 20120720184104) do
 
   create_table "attendees", :force => true do |t|
     t.integer  "user_id"
@@ -22,6 +22,11 @@ ActiveRecord::Schema.define(:version => 20120714165646) do
     t.integer  "menu_id"
     t.boolean  "owner",            :default => false
   end
+
+  add_index "attendees", ["event_id"], :name => "index_attendees_on_event_id"
+  add_index "attendees", ["menu_id"], :name => "index_attendees_on_menu_id"
+  add_index "attendees", ["possible_time_id"], :name => "index_attendees_on_possible_time_id"
+  add_index "attendees", ["user_id"], :name => "index_attendees_on_user_id"
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -35,6 +40,9 @@ ActiveRecord::Schema.define(:version => 20120714165646) do
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
+
+  add_index "authentications", ["provider"], :name => "index_authentications_on_provider"
+  add_index "authentications", ["user_id"], :name => "index_authentications_on_user_id"
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -59,6 +67,8 @@ ActiveRecord::Schema.define(:version => 20120714165646) do
     t.string   "google_url"
   end
 
+  add_index "events", ["user_id"], :name => "index_events_on_user_id"
+
   create_table "items", :force => true do |t|
     t.string   "name"
     t.string   "quantity"
@@ -69,6 +79,10 @@ ActiveRecord::Schema.define(:version => 20120714165646) do
     t.datetime "updated_at",  :null => false
   end
 
+  add_index "items", ["category_id"], :name => "index_items_on_category_id"
+  add_index "items", ["event_id"], :name => "index_items_on_event_id"
+  add_index "items", ["user_id"], :name => "index_items_on_user_id"
+
   create_table "menus", :force => true do |t|
     t.integer  "restaraunt_id"
     t.integer  "event_id"
@@ -78,6 +92,9 @@ ActiveRecord::Schema.define(:version => 20120714165646) do
     t.string   "name"
   end
 
+  add_index "menus", ["event_id"], :name => "index_menus_on_event_id"
+  add_index "menus", ["restaraunt_id"], :name => "index_menus_on_restaraunt_id"
+
   create_table "messages", :force => true do |t|
     t.integer  "user_id"
     t.string   "content"
@@ -85,6 +102,9 @@ ActiveRecord::Schema.define(:version => 20120714165646) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "messages", ["event_id"], :name => "index_messages_on_event_id"
+  add_index "messages", ["user_id"], :name => "index_messages_on_user_id"
 
   create_table "possible_attendees", :force => true do |t|
     t.integer  "possible_time_id"
@@ -96,6 +116,11 @@ ActiveRecord::Schema.define(:version => 20120714165646) do
     t.boolean  "visible",          :default => true
   end
 
+  add_index "possible_attendees", ["event_id"], :name => "index_possible_attendees_on_event_id"
+  add_index "possible_attendees", ["possible_time_id"], :name => "index_possible_attendees_on_possible_time_id"
+  add_index "possible_attendees", ["user_id"], :name => "index_possible_attendees_on_user_id"
+  add_index "possible_attendees", ["visible"], :name => "index_possible_attendees_on_visible"
+
   create_table "possible_times", :force => true do |t|
     t.integer  "event_id"
     t.datetime "time_start"
@@ -103,6 +128,8 @@ ActiveRecord::Schema.define(:version => 20120714165646) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "possible_times", ["event_id"], :name => "index_possible_times_on_event_id"
 
   create_table "restaraunts", :force => true do |t|
     t.string   "name"
@@ -115,6 +142,9 @@ ActiveRecord::Schema.define(:version => 20120714165646) do
     t.string   "venue_id"
   end
 
+  add_index "restaraunts", ["ls_id"], :name => "index_restaraunts_on_ls_id"
+  add_index "restaraunts", ["venue_id"], :name => "index_restaraunts_on_venue_id"
+
   create_table "tweeps", :force => true do |t|
     t.string   "username"
     t.string   "avatar"
@@ -124,6 +154,8 @@ ActiveRecord::Schema.define(:version => 20120714165646) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "tweeps", ["user_id"], :name => "index_tweeps_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email"
