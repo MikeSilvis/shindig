@@ -1,5 +1,5 @@
 class @App.Accordian extends Spine.Controller
-	SERVICES = ["#times", "#food", "#items", "#messages", "#share"]
+	SERVICES = ["#times", "#items", "#messages", "#share"]
 
 	constructor: ->
 	  @hideAllTheThings()

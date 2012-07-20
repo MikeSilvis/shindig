@@ -33,8 +33,6 @@ class App.CurrentUser extends Spine.Controller
     @events             = new App.Events({ el: @eventEl })
     @attendees          = new App.Attendees({ el: @attendeesEl })
     @possibleTime       = new App.PossibleTimes({ el: @possibleTimesEl })
-    @restaurants        = new App.Restaurants({ el: @restaurantEl })
-    @menus              = new App.Menus({ el: @menusEl })
     @messages           = new App.Messages({ el: @messagesEl })
     @items              = new App.Items({ el: @itemEl })
     @share              = new App.Shares({ el: @shareEl })
