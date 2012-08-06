@@ -5,7 +5,7 @@ class HomeController < ApplicationController
   	if cookies[:name] && current_user
   		event = current_user.events.create_from_cookies(cookies)
   		clear_event_cookies
-  		redirect_to event_path(event.id), notice: "Rocking start to your shindig bro. Keep going!"
+  		redirect_to event_path(event.id), notice: "Rocking start to your shindig. Keep going!"
   	end
   end
 
