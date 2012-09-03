@@ -22,7 +22,10 @@ class PossibleTime < ActiveRecord::Base
   end
 
   def find_availability
-     Resque.enqueue(PullAvailabilityTime, self.id)
+    Thread.new do
+      PullAvailabilityTime.perform(self.id)
+    end
+     # Resque.enqueue(PullAvailabilityTime, self.id)
   end
 
   def time_start_formatted

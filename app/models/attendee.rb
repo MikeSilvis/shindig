@@ -12,7 +12,8 @@ class Attendee < ActiveRecord::Base
   end
 
   def find_availability
-    Resque.enqueue(PullAvailabilityAttendee, self.id)
+    Thread.new { PullAvailabilityAttendee.perform(self.id) }
+    # Resque.enqueue(PullAvailabilityAttendee, self.id)
   end
 
   def self.find_attendees_except_self(event_id_param, user_id_param)

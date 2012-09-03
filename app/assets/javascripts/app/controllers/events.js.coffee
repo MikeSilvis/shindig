@@ -2,7 +2,6 @@ $ = jQuery.sub()
 Event = App.Event
 
 class App.Events extends Spine.Controller
-
   constructor: ->
     super
     Event.bind 'refresh change', @render
@@ -11,6 +10,7 @@ class App.Events extends Spine.Controller
   render: =>
     @event = Event.first()
     window.event_token = @event.token
+    @share = new App.Shares({ el: $("#share") })
     @html @view('events/show')(@event)
     $("#map").append(@view('events/map')(@event))
     new Map(@event.latitude, @event.longitude)

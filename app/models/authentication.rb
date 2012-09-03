@@ -32,13 +32,17 @@ class Authentication < ActiveRecord::Base
   end
 
   def import_tweeps
-    Resque.enqueue(PullTweets, user_id) if provider == "twitter"
+    Thread.new do
+      PullTweets.perform(user_id) if provider == "twitter"
+    end
+    # Resque.enqueue(PullTweets, user_id) if provider == "twitter"
   end
 
   def verify_calendar
     if provider == "google"
       user.attendees.each do |attendee|
-        Resque.enqueue(PullAvailabilityAttendee, attendee.id)
+        Thread.new { PullAvailabilityAttendee.perform(attendee.id) }
+        # Resque.enqueue(PullAvailabilityAttendee, attendee.id)
       end
     end
   end

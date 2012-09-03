@@ -1,6 +1,11 @@
 class Api::V1::PossibleAttendeesController < ApplicationController
 	before_filter :require_login
 
+	def show
+		@possible_attendee = PossibleAttendee.where(id: params[:id]).includes(:user)
+		render json: @possible_attendee
+	end
+
 	def create
 		pa = params[:possible_attendee][:possible_time_id]
 		@possible_attendee = PossibleAttendee.create_for_user(pa, params[:event_id], current_user.id)

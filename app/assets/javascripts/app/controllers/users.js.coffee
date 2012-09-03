@@ -17,8 +17,6 @@ class App.CurrentUser extends Spine.Controller
     "#event"       : "eventEl"
     "#times"       : "possibleTimesEl"
     "#messages"    : "messagesEl"
-    "#menus"       : "menusEl"
-    "#restaurant"  : "restaurantEl"
     "#attendees"   : "attendeesEl"
     "#share"       : "shareEl"
     "#items"       : "itemEl"
@@ -35,5 +33,3 @@ class App.CurrentUser extends Spine.Controller
     @possibleTime       = new App.PossibleTimes({ el: @possibleTimesEl })
     @messages           = new App.Messages({ el: @messagesEl })
     @items              = new App.Items({ el: @itemEl })
-    @share              = new App.Shares({ el: @shareEl })
-
