@@ -6,7 +6,7 @@ class Api::V1::ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.where(params[:id]).includes(:user).first
+    @item = Item.where(id: params[:id]).includes(:user).first
   end
 
   def create
