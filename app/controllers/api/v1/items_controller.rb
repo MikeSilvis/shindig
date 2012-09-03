@@ -5,6 +5,10 @@ class Api::V1::ItemsController < ApplicationController
     @items = Item.where(event_id: params[:event_id]).includes(:user)
   end
 
+  def show
+    @item = Item.where(params[:id]).includes(:user).first
+  end
+
   def create
     @item = Item.create(event_id: params[:event_id],
                         user_id: current_user.id,
