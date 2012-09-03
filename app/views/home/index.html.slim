@@ -6,10 +6,18 @@ br
 .row
   .span5
     .well
-      h1 Invite your bros and plan the next party of a lifetime.
+      h1 Invite your friends and begin planning your next party!
       hr
-      h2 And one day achieve greatness:
-      iframe allowfullscreen="" frameborder="0" height="280" src="http://www.youtube.com/embed/xc0CB6URrV0" width="400"
+      / #myCarousel.carousel.slide
+      /   .carousel-inner
+      /     .active.item
+      /       = image_tag "http://twitter.github.com/bootstrap/assets/img/bootstrap-mdo-sfmoma-01.jpg"
+      /     .item
+      /       = image_tag "http://twitter.github.com/bootstrap/assets/img/bootstrap-mdo-sfmoma-02.jpg"
+      /     .item
+      /       = image_tag "http://twitter.github.com/bootstrap/assets/img/bootstrap-mdo-sfmoma-01.jpg"
+      /   a.carousel-control.left data-slide="prev" href="#myCarousel" ‹
+      /   a.carousel-control.right data-slide="next" href="#myCarousel" ›
   .span5.pull-right
     .well
       h1 Start Instantly!

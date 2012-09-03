@@ -7,3 +7,5 @@ $(document).ready ->
 			$.cookie("street", $("#event_street").val())
 			$.cookie("zipcode", $("#event_zipcode").val())
 			$('#signUp').modal("show")
+jQuery ->
+  $(".carousel").carousel interval: 3000 if $(".carousel")

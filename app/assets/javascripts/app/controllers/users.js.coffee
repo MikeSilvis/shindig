@@ -21,7 +21,7 @@ class App.CurrentUser extends Spine.Controller
     "#restaurant"  : "restaurantEl"
     "#attendees"   : "attendeesEl"
     "#share"       : "shareEl"
-    "#items"        : "itemEl"
+    "#items"       : "itemEl"
 
   constructor: ->
     super
