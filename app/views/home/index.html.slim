@@ -25,7 +25,7 @@ br
       = form_for Event.new, :validate => true  do |f|
         h2 What for?
         .control-group
-          = f.text_field(:name, placeholder: "Name", class: "input-full")
+          = f.text_field(:name, placeholder: "Title", class: "input-full")
         .control-group
         = f.text_area :description, placeholder: "Description", class: "input-full"
         h2 Where at?
