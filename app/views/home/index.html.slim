@@ -4,36 +4,21 @@ br
   .span12
     = image_tag "logo-large.png"
 .row
-  .span5
-    .well
-      h1 Invite your friends and begin planning your next party!
-      hr
-      / #myCarousel.carousel.slide
-      /   .carousel-inner
-      /     .active.item
-      /       = image_tag "http://twitter.github.com/bootstrap/assets/img/bootstrap-mdo-sfmoma-01.jpg"
-      /     .item
-      /       = image_tag "http://twitter.github.com/bootstrap/assets/img/bootstrap-mdo-sfmoma-02.jpg"
-      /     .item
-      /       = image_tag "http://twitter.github.com/bootstrap/assets/img/bootstrap-mdo-sfmoma-01.jpg"
-      /   a.carousel-control.left data-slide="prev" href="#myCarousel" ‹
-      /   a.carousel-control.right data-slide="next" href="#myCarousel" ›
-  .span5.pull-right
-    .well
-      h1 Start Instantly!
-      hr
-      = form_for Event.new, :validate => true  do |f|
-        h2 What for?
-        .control-group
-          = f.text_field(:name, placeholder: "Name", class: "input-full")
-        .control-group
-        = f.text_area :description, placeholder: "Description", class: "input-full"
-        h2 Where at?
-        .control-group
-          = f.text_field :street, placeholder: "Street", class: "input-full"
-        .control-group
-          = f.text_field :zipcode, placeholder: "Zipcode", class: "input-full"
-        = f.submit "Less Go!", class: "btn btn-success btn-large"
+  .well
+    h1.center_header Invite your friends and begin planning your next party!
+    hr
+    = form_for Event.new, :validate => true  do |f|
+      h2 What for?
+      .control-group
+        = f.text_field(:name, placeholder: "Name", class: "input-full")
+      .control-group
+      = f.text_area :description, placeholder: "Description", class: "input-full"
+      h2 Where at?
+      .control-group
+        = f.text_field :street, placeholder: "Street", class: "input-full"
+      .control-group
+        = f.text_field :zipcode, placeholder: "Zipcode", class: "input-full"
+      = f.submit "Less Go!", class: "btn btn-success btn-large", style: "width:100%;"
 
 #signUp.modal.hide
   .modal-header

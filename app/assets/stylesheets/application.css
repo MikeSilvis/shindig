@@ -12,3 +12,6 @@
  *= require chosen
  *= require_tree .
 */
+.center_header{
+  text-align: center;
+}
