@@ -10,7 +10,7 @@
       <option value="7">Desert</option>
     </select>
   </div>
-  <div class="span4" style="width:306px;">
+  <div class="span4" style="width:260px;">
     <input type="text" placeholder="What?" id="item" class='input-full' name="name">
   </div>
   <div class="span2">

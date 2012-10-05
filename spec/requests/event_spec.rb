@@ -11,12 +11,6 @@ describe "Getting an event", :type => :api do
 		Api::V1::EventsController.any_instance.stub(:current_user).and_return(current_user)
 		Api::V1::EventsController.any_instance.stub(:require_login).and_return(true)
 	end
-	# describe "#create" do
-	# 	it "Creates an event" do
-	# 		post api_v1_events_path, event: { name: "WEEE", description: "Yeaaah" }
-	#   	response.status.should == 201
-	# 	end
-	# end
 	describe "#show" do
 		it "shows an event HTML" do
 			visit event_path(event.id)
