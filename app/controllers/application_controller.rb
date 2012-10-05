@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   def require_login
     unless current_user
       session[:redirect_url] = request.fullpath
-      redirect_to "/users/auth/twitter"
+      redirect_to "/users/auth/facebook"
     end
   end
 

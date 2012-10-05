@@ -11,6 +11,7 @@ gem 'jbuilder'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
 gem 'twitter'
 gem 'faraday'
 gem 'resque', :require => "resque/server"

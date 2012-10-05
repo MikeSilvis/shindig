@@ -20,6 +20,16 @@ module UserOathHelper
       }
     end
 
+    def facebook_hash(data)
+      {
+        name: data["name"],
+        username: data["nickname"],
+        email: data["email"],
+        avatar: data["image"]
+      }
+
+    end
+
     def verify_from_service(service, data)
       service_hash = User.send("#{service}_hash".to_sym, data)
       User.where(username: username(data).downcase).first_or_create(service_hash)

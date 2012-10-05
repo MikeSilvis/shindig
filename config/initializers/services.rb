@@ -1,1 +1,1 @@
-SERVICES = ["twitter", "google"]
+SERVICES = ["twitter", "google", "facebook"]

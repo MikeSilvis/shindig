@@ -31,6 +31,16 @@ class Authentication < ActiveRecord::Base
                           )
   end
 
+  def self.find_or_create_facebook(data)
+      where(token: data["uid"],
+          provider: data["provider"]
+         ).first_or_create(
+                           avatar: data["info"]["image"],
+                           uid: data["uid"],
+                           username: data["info"]["nickname"]
+                          )
+  end
+
   def import_tweeps
     Thread.new do
       PullTweets.perform(user_id) if provider == "twitter"

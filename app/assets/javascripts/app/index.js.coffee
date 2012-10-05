@@ -19,6 +19,7 @@ class App extends Spine.Controller
     @current_user = new App.CurrentUser({ el: @el})
     @current_attendee = new App.CurrentAttendee({el: @el})
     @accordian = new App.Accordian({el: @el})
+    window.location.replace("http://#{window.location.host + window.location.pathname}") if window.location.href.match(/#_=_/)
 
 window.App = App
 window.scoped_event_id = new ParamsFinder().id()
