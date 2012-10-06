@@ -3,14 +3,14 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   SERVICES.each do |service_provider|
     define_method service_provider do
       current_user ? create_auth(service_provider) : verify_user_and_auth(service_provider)
-      redirect_to "/", notice: "#{service_provider.titleize} Registration Successful."
+      redirect_to redirect_location, notice: "#{service_provider.titleize} Registration Successful."
     end
   end
 
 private
 
-  def redirect_location(redirect_url)
-    redirect_url || root_url
+  def redirect_location
+    session[:redirect_url] || root_url
   end
 
   def verify_user_and_auth(service_provider)
