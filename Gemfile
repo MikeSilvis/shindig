@@ -13,7 +13,7 @@ gem 'omniauth-twitter'
 gem 'omniauth-google-oauth2'
 gem 'twitter'
 gem 'faraday'
-gem 'resque', :require => "resque/server"
+gem 'resque', :require => 'resque/server'
 gem 'spine-rails'
 gem 'pusher'
 gem 'eco'
@@ -23,7 +23,7 @@ gem 'squeel'
 gem 'shortly'
 gem 'simple_form'
 gem 'client_side_validations'
-gem "airbrake"
+gem 'airbrake'
 gem 'chosen-rails'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
