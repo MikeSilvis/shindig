@@ -23,12 +23,13 @@ br
 #signUp.modal.hide
   .modal-header
     button.close data-dismiss="modal" type="button"
-    h1 Sorry Bro...
+    h1 Sorry...
   .modal-body
-    h4 You need to be logged in before you can plan your RAGER.
+    h4 You need to be logged in before you can plan your event.
     br
-    h4 You mind authenticating with Twitter first?
+    h4 You mind authenticating with Twitter or Facebook first?
     br
     h4 Don't worry I'll keep all your shindig's info
   .modal-footer
-    a.btn.btn-primary href="/users/auth/twitter" Sure
+    a.btn.btn-inverse href="/users/auth/facebook" Facebook
+    a.btn.btn-primary href="/users/auth/twitter" Twitter
