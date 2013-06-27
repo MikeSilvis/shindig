@@ -1,4 +1,4 @@
-# ShindigWith.me - A party planning app for bros
+# ShindigWith.me - The Ultimate Party Planning App
 
 * Integrates with gCal to determine best date
 * Authenticates with Twitter and uses it primarily to tweet at your followers
