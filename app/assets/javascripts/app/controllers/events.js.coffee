@@ -1,4 +1,3 @@
-$ = jQuery.sub()
 Event = App.Event
 
 class App.Events extends Spine.Controller
